@@ -8,3 +8,4 @@ python3 -I parche-ortografia.py "$2" leer-la-consigna/plantilla.html
 python3 -I parche-recorregir.py "$2" leer-la-consigna/plantilla.html leer-la-consigna/integrar-en-entrenador.py
 python3 -I inyectar-figuras.py "$2"
 python3 -I parche-plan.py "$2"
+python3 -I parche-nose.py "$2"
