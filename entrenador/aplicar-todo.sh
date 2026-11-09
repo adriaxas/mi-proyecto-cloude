@@ -9,3 +9,4 @@ python3 -I parche-recorregir.py "$2" leer-la-consigna/plantilla.html leer-la-con
 python3 -I inyectar-figuras.py "$2"
 python3 -I parche-plan.py "$2"
 python3 -I parche-nose.py "$2"
+python3 -I parche-decimales.py "$2"
