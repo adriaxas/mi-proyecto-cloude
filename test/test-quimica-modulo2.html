@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"></head><body>
+<title>Test de Química Módulo 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: una columna de lectura, una tarjeta por pregunta, agrupadas por unidad de la guía. */
+:root{--bg:#f6f7fa;--card:#ffffff;--ink:#1c2230;--mute:#5d6678;--line:#dde1ea;--acc:#2d5be3;--accink:#ffffff;--ok:#16803f;--okbg:#e5f5ec;--ko:#b42323;--kobg:#fbe9e9;--quote:#eef1f8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f131b;--card:#181e2a;--ink:#e8ecf5;--mute:#98a2b6;--line:#2a3345;--acc:#7e9dff;--accink:#0f131b;--ok:#5cd08a;--okbg:#12301f;--ko:#ff8c8c;--kobg:#391b1b;--quote:#202838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f131b;--card:#181e2a;--ink:#e8ecf5;--mute:#98a2b6;--line:#2a3345;--acc:#7e9dff;--accink:#0f131b;--ok:#5cd08a;--okbg:#12301f;--ko:#ff8c8c;--kobg:#391b1b;--quote:#202838;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:720px;margin:0 auto;padding-block:20px 48px}
+h1{font-size:1.45rem;line-height:1.2;margin:0 0 4px;text-wrap:balance}
+.lead{color:var(--mute);margin:0 0 16px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:20px}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .2s}
+.unit{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:26px 0 8px;font-weight:600}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px}
+.q.ok{border-color:var(--ok);background:var(--okbg)}.q.ko{border-color:var(--ko);background:var(--kobg)}
+.qt{margin:0 0 10px;font-weight:600}.qn{color:var(--acc);margin-right:6px}
+.tag{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:2px;font-weight:500}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:6px;cursor:pointer;background:var(--card)}
+.opt:hover{border-color:var(--acc)}
+.opt input{margin-top:5px;accent-color:var(--acc)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}.opt.wrong{border-color:var(--ko);background:var(--kobg)}
+input[type=text]{width:100%;font:inherit;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+input[type=text]:focus-visible,button:focus-visible,.opt:focus-within{outline:2px solid var(--acc);outline-offset:2px}
+.fb{margin-top:10px;font-size:.95rem}
+.fb b.ok{color:var(--ok)}.fb b.ko{color:var(--ko)}
+.guia{margin:8px 0 0;padding:8px 12px;background:var(--quote);border-radius:8px;color:var(--ink);font-size:.9rem}
+.guia small{display:block;color:var(--mute);margin-top:2px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button{font:inherit;border-radius:8px;padding:10px 18px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button.p{background:var(--acc);color:var(--accink);border-color:var(--acc);font-weight:600}
+.res{margin-top:18px;padding:16px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.res .n{font-size:2rem;font-weight:700;line-height:1.1}
+.res ul{margin:8px 0 0;padding-left:20px;color:var(--mute)}
+[hidden]{display:none!important}
+</style>
+<div class="wrap">
+  <h1>Test de Química · Módulo 2</h1>
+  <p class="lead">8 preguntas, 2 por unidad. Todas salen de la guía de Introducción a la Química y de los temas donde Fabricio más se equivocó. Al corregir vas a ver qué dice la guía y en qué página.</p>
+  <div class="bar" aria-hidden="true"><i id="prog"></i></div>
+  <form id="f" onsubmit="return false"><div id="qs"></div>
+    <div class="actions"><button class="p" id="go" type="button">Corregir</button><button id="again" type="button" hidden>Hacerlo de nuevo</button></div>
+  </form>
+  <div class="res" id="res" hidden aria-live="polite"></div>
+</div>
+<script>
+(function () {
+  var Q = [
+    { u: 'Unidad 3 · Uniones químicas', kind: 'vf', t: 'En la molécula de agua, cada átomo de hidrógeno completa ocho electrones a su alrededor.', ok: 'FALSO',
+      opts: ['VERDADERO', 'FALSO'], q: 'El hidrógeno, en cambio, necesita dos electrones, como el helio, que es el gas noble más cercano.', p: 'Cap. 3, Unión covalente · p. 13' },
+    { u: 'Unidad 3 · Uniones químicas', kind: 'fill', t: 'Cuando un átomo metálico cede sus electrones más externos, se transforma en un ______.', ok: ['catión', 'cation'], show: 'catión',
+      q: 'los átomos metálicos se transforman en cationes y los átomos no metálicos se transforman en aniones.', p: 'Cap. 3, Unión iónica · p. 8' },
+    { u: 'Unidad 4 · Familias de compuestos: ácidos, bases y pH', kind: 'mc', t: '¿Qué característica es propia de una base?', ok: 'Actúan sobre las grasas',
+      opts: ['Tienen sabor agrio', 'Actúan sobre las grasas', 'Atacan el mármol', 'Corroen metales como el hierro'],
+      q: 'Las bases poseen las siguientes características: sabor amargo, resbalosas al tacto, actúan sobre las grasas, se disuelven en agua.', p: 'Cap. 4, Bases · p. 24' },
+    { u: 'Unidad 4 · Familias de compuestos: ácidos, bases y pH', kind: 'fill', t: 'En la lluvia ácida, el dióxido de azufre (SO₂) y el dióxido de nitrógeno (NO₂) son ______ de azufre y de nitrógeno.', ok: ['óxidos', 'oxidos'], show: 'óxidos',
+      q: 'Al reaccionar con el oxígeno y el agua de la atmósfera, estos óxidos de azufre y el nitrógeno se convierten en ácidos, como el sulfúrico y el nítrico.', p: 'Cap. 4, Ácidos (lluvia ácida) · p. 23' },
+    { u: 'Unidad 5 · Reacciones químicas', kind: 'mc', t: 'Una reacción irreversible, una vez iniciada, transcurre hasta que…', ok: 'los reactivos, o el que está en defecto, se consumen por completo',
+      opts: ['los reactivos, o el que está en defecto, se consumen por completo', 'se forma la misma cantidad de productos que de reactivos', 'los productos reaccionan entre sí y regresan a los reactivos', 'se absorbe todo el calor del ambiente'],
+      q: 'Estas reacciones químicas, una vez iniciadas, transcurren hasta que los reactivos (o el reactivo que se halle en defecto) se consumen por completo.', p: 'Cap. 5, Clases de reacciones: según el sentido · p. 47' },
+    { u: 'Unidad 5 · Reacciones químicas', kind: 'mc', t: 'En la ecuación H₂ + Cl₂ → 2 HCl, ¿qué indican los números pequeños 2 escritos abajo a la derecha de H y de Cl?', ok: 'El número de átomos de cada elemento en la molécula',
+      opts: ['La cantidad de moléculas de cada sustancia que reaccionan', 'El número de átomos de cada elemento en la molécula', 'El estado físico de cada sustancia', 'Que la reacción es reversible'],
+      q: 'Subíndices: números pequeños colocados en el extremo derecho inferior de un símbolo. Nos indican el número de átomos de los elementos que forman la reacción.', p: 'Cap. 5, Símbolos auxiliares · p. 42' },
+    { u: 'Unidad 6 · Química orgánica', kind: 'mc', t: '¿Qué función orgánica oxigenada da el aroma a frutas como la banana y la frutilla, y se usa en perfumes y golosinas?', ok: 'Los ésteres',
+      opts: ['Los éteres', 'Los ésteres', 'Los aldehídos', 'Las cetonas'],
+      q: 'Ésteres (–COO–): dan el aroma a frutas como la banana y la frutilla; se usan en perfumes y golosinas.', p: 'Cap. 6, Funciones orgánicas oxigenadas · p. 59' },
+    { u: 'Unidad 6 · Química orgánica', kind: 'fill', t: 'Un brasero en un ambiente mal ventilado produce, por combustión incompleta, ______, un gas tóxico.', ok: ['monóxido de carbono', 'monoxido de carbono', 'co'], show: 'monóxido de carbono',
+      q: 'El monóxido de carbono es un gas tóxico. Inhibe el proceso de oxigenación sanguínea, que puede llegar a producir muerte por asfixia. Es el responsable de numerosos accidentes que ocurren cuando se instala un brasero o un calefón en un ambiente mal ventilado.', p: 'Cap. 6, La combustión · p. 62' }
+  ];
+  var KIND = { vf: 'Verdadero o falso', mc: 'Opción múltiple', fill: 'Completar' };
+  var qs = document.getElementById('qs'), prog = document.getElementById('prog'), res = document.getElementById('res');
+  var go = document.getElementById('go'), again = document.getElementById('again'), done = false;
+  var norm = function (s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').trim().replace(/\s+/g, ' ').toLowerCase(); };
+  var shuffle = function (a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
+  var el = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+
+  function build() {
+    qs.replaceChildren(); res.hidden = true; again.hidden = true; go.hidden = false; done = false; prog.style.width = '0';
+    var lastU = '';
+    Q.forEach(function (q, i) {
+      if (q.u !== lastU) { qs.appendChild(el('div', 'unit', q.u)); lastU = q.u; }
+      var box = el('div', 'q'), head = el('p', 'qt'); box.dataset.i = i;
+      head.appendChild(el('span', 'qn', (i + 1) + '.')); head.appendChild(document.createTextNode(q.t)); head.appendChild(el('span', 'tag', KIND[q.kind]));
+      box.appendChild(head);
+      if (q.kind === 'fill') {
+        var inp = el('input'); inp.type = 'text'; inp.id = 'a' + i; inp.autocomplete = 'off'; inp.setAttribute('aria-label', 'Respuesta ' + (i + 1)); box.appendChild(inp);
+      } else {
+        (q.kind === 'mc' ? shuffle(q.opts) : q.opts).forEach(function (o) {
+          var lab = el('label', 'opt'), r = el('input'); r.type = 'radio'; r.name = 'q' + i; r.value = o;
+          lab.appendChild(r); lab.appendChild(el('span', null, o)); box.appendChild(lab);
+        });
+      }
+      box.appendChild(el('div', 'fb')); qs.appendChild(box);
+    });
+  }
+  function answered() { var n = 0; Q.forEach(function (q, i) { var b = qs.querySelector('[data-i="' + i + '"]'); var v = q.kind === 'fill' ? b.querySelector('input').value.trim() : (b.querySelector('input:checked') || {}).value; if (v) n++; }); return n; }
+  qs.addEventListener('input', function () { if (!done) prog.style.width = (100 * answered() / Q.length) + '%'; });
+  qs.addEventListener('change', function () { if (!done) prog.style.width = (100 * answered() / Q.length) + '%'; });
+
+  go.addEventListener('click', function () {
+    var score = 0, blank = [];
+    Q.forEach(function (q, i) {
+      var b = qs.querySelector('[data-i="' + i + '"]'), fb = b.querySelector('.fb'), good, given;
+      if (q.kind === 'fill') {
+        var inp = b.querySelector('input'); given = inp.value.trim(); good = q.ok.some(function (a) { return norm(a) === norm(given); }); inp.disabled = true;
+      } else {
+        var c = b.querySelector('input:checked'); given = c ? c.value : ''; good = given === q.ok;
+        b.querySelectorAll('.opt').forEach(function (l) { var v = l.querySelector('input'); v.disabled = true; if (v.value === q.ok) l.classList.add('right'); else if (v.checked) l.classList.add('wrong'); });
+      }
+      if (!given) blank.push(i + 1);
+      if (good) score++;
+      b.classList.add(good ? 'ok' : 'ko');
+      fb.replaceChildren();
+      var head = el('div'); var tag = el('b', good ? 'ok' : 'ko', good ? '✔ Correcto' : (given ? '✘ Incorrecto' : '✘ Sin responder')); head.appendChild(tag);
+      if (!good) head.appendChild(document.createTextNode(' · Respuesta correcta: ' + (q.show || q.ok)));
+      fb.appendChild(head);
+      var g = el('div', 'guia'); g.appendChild(document.createTextNode('La guía dice: «' + q.q + '»')); g.appendChild(el('small', null, q.p)); fb.appendChild(g);
+    });
+    done = true; prog.style.width = '100%'; go.hidden = true; again.hidden = false;
+    var weak = Q.map(function (q, i) { return [q, i]; }).filter(function (x) { return qs.querySelector('[data-i="' + x[1] + '"]').classList.contains('ko'); });
+    res.replaceChildren(); res.hidden = false;
+    res.appendChild(el('div', 'n', score + ' / ' + Q.length));
+    res.appendChild(el('div', null, score === Q.length ? 'Todo bien. Estas ideas ya están firmes.' : (score >= 6 ? 'Va bien. Repasá lo que quedó marcado en rojo.' : 'Hay que repasar. Leé en la guía las partes marcadas en rojo.')));
+    if (weak.length) { var ul = el('ul'); weak.forEach(function (x) { ul.appendChild(el('li', null, 'Pregunta ' + (x[1] + 1) + ': ' + x[0].p)); }); res.appendChild(el('div', null, 'Para repasar en la guía:')); res.appendChild(ul); }
+    res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  again.addEventListener('click', function () { build(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  build();
+})();
+</script>
+</body></html>
