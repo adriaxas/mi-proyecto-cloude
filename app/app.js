@@ -20,7 +20,7 @@ function h(tag, attrs = {}, ...kids) {
   for (const k of kids.flat()) el.append(k instanceof Node ? k : document.createTextNode(k));
   return el;
 }
-const norm = (s, cs) => { s = String(s).trim().replace(/\s+/g, ' '); return cs ? s : s.toLowerCase(); };
+const norm = s => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().replace(/\s+/g, ' ').toLowerCase();
 const setMark = (el, ok) => {
   el.classList.remove('ok', 'ko'); el.classList.add(ok ? 'ok' : 'ko');
   const old = el.querySelector(':scope > .mark'); if (old) old.remove();
@@ -52,7 +52,11 @@ function renderQuiz(ex) {
   });
   return { node: wrap, check() {
     let c = 0;
-    qs.forEach(({ box, getOk }) => { const ok = getOk(); if (ok) c++; setMark(box, ok); });
+    qs.forEach(({ box, getOk, q }) => {
+      const ok = getOk(); if (ok) c++; setMark(box, ok);
+      const fb = box.querySelector('.fb');
+      fb.textContent = ok ? '' : 'Respuesta correcta: ' + q.answers.filter(a => a.correct).map(a => a.text).join(' / ');
+    });
     return { correct: c, total: qs.length };
   } };
 }
@@ -70,7 +74,7 @@ function renderMatch(ex) {
     let c = 0;
     rows.forEach(({ it, sel, mk }) => {
       const ok = it.correct.includes(sel.value); if (ok) c++;
-      mk.textContent = ok ? '✔' : '✘'; mk.className = 'mark ' + (ok ? 'ok' : 'ko');
+      mk.textContent = ok ? '✔' : '✘ Correcta: ' + it.correct.join(' / '); mk.className = 'mark ' + (ok ? 'ok' : 'ko');
     });
     return { correct: c, total: rows.length };
   } };
@@ -84,16 +88,17 @@ function renderCloze(ex) {
     if (!m) { box.append(part); return; }
     const gap = gaps.find(g => g.n === +m[1]);
     const inp = h('input', { type: 'text', 'aria-label': `Hueco ${gap.n}`, title: gap.hint || '', autocomplete: 'off' });
-    fields.push({ inp, gap }); box.append(inp);
+    const rv = h('span', { class: 'fb' }); fields.push({ inp, gap, rv }); box.append(inp, rv);
   });
   const node = h('div');
   if (wordList && wordList.length) node.append(h('p', { class: 'fb' }, 'Palabras: ' + wordList.join(' · ')));
   node.append(box);
   return { node, check() {
     let c = 0;
-    fields.forEach(({ inp, gap }) => {
-      const ok = gap.answers.some(a => norm(a, caseSensitive) === norm(inp.value, caseSensitive));
+    fields.forEach(({ inp, gap, rv }) => {
+      const ok = gap.answers.some(a => norm(a) === norm(inp.value));
       if (ok) c++; setMark(inp, ok);
+      rv.textContent = ok ? '' : ' → ' + gap.answers.join(' / ');
     });
     return { correct: c, total: fields.length };
   } };
@@ -117,16 +122,18 @@ function renderCross(ex) {
     tb.append(tr);
   });
   const clues = (title, list) => h('div', {}, h('h4', {}, title), h('ol', { class: 'clues' }, list.map(w => h('li', { value: w.n }, w.clue))));
-  const node = h('div', {}, h('table', { class: 'grid' }, tb), clues('Horizontales', across), clues('Verticales', down));
+  const rvx = h('div', { class: 'fb' });
+  const node = h('div', {}, rvx, h('div', { class: 'grid-wrap' }, h('table', { class: 'grid' }, tb)), clues('Horizontales', across), clues('Verticales', down));
   const words = [...across.map(w => ({ ...w, dr: 0, dc: 1 })), ...down.map(w => ({ ...w, dr: 1, dc: 0 }))];
   return { node, check() {
-    let c = 0; const bad = new Set();
+    let c = 0; const bad = new Set(); const miss = [];
     words.forEach(w => {
       const cells = [...w.answer].map((_, i) => inputs[(w.row + w.dr * i) + ',' + (w.col + w.dc * i)]);
       const ok = cells.every((x, i) => x && x.inp.value.toUpperCase() === w.answer[i]);
-      if (ok) c++; else cells.forEach(x => x && bad.add(x));
+      if (ok) c++; else { miss.push(w.n + (w.dr ? '↓ ' : '→ ') + w.answer); cells.forEach(x => x && bad.add(x)); }
     });
     Object.values(inputs).forEach(x => { x.td.classList.remove('ok', 'ko'); x.td.classList.add(bad.has(x) ? 'ko' : (x.inp.value ? 'ok' : 'ko')); });
+    rvx.textContent = miss.length ? 'Respuestas correctas de las palabras falladas: ' + miss.join(' · ') : '';
     return { correct: c, total: words.length };
   } };
 }
