@@ -35,9 +35,7 @@ function renderQuiz(ex) {
     const box = h('div', { class: 'q' });
     const correctN = q.answers.filter(a => a.correct).length;
     const radio = q.type === 'multichoice' || (q.type === 'multiselect' && correctN === 1);
-    const isVF = q.answers.length === 2 && q.answers[0].text === 'VERDADERO';
-    const tag = q.type === 'short' ? 'Completar' : isVF ? 'Verdadero o falso' : q.type === 'multichoice' || correctN === 1 ? 'Opción múltiple' : 'Selección';
-    box.append(h('div', {}, h('strong', {}, `${qi + 1}. `), ex.id === 101 ? h('span', { class: 'tag' }, tag) : '', q.text));
+    box.append(h('div', {}, h('strong', {}, `${qi + 1}. `), q.text));
     let getOk, fb = h('div', { class: 'fb' });
     if (q.type === 'short') {
       const inp = h('input', { type: 'text', 'aria-label': `Respuesta ${qi + 1}` });
@@ -152,28 +150,30 @@ const cls = s => s >= 80 ? 'good' : s < 50 ? 'bad' : '';
 
 // ---------- UI ----------
 let currentId = EX[0].id;
+const partOf = ex => ex.part || 1;
+const numOf = ex => partOf(ex) === 2 ? ex.id - 200 : ex.id;
 function renderMenu() {
   const menu = $('#menu'); menu.replaceChildren();
-  let ch = null;
+  let key = null;
   EX.forEach(ex => {
-    if (ex.chapter !== ch) { ch = ex.chapter; menu.append(h('h3', {}, ch >= 90 ? 'Examen de refuerzo' : `Capítulo ${ch}`)); }
+    const k = partOf(ex) + ':' + ex.chapter;
+    if (k !== key) {
+      if (!key || key.split(':')[0] !== String(partOf(ex))) menu.append(h('h2', { class: 'part' }, partOf(ex) === 1 ? 'Parte 1 · Ejercicios de la guía' : 'Parte 2 · Ejercicios nuevos'));
+      key = k; menu.append(h('h3', {}, `Capítulo ${ex.chapter}`));
+    }
     const p = progress[ex.id];
-    menu.append(h('button', { class: ex.id === currentId ? 'on' : '', onclick: () => { currentId = ex.id; show(); } },
-      h('span', {}, `${ex.id}. ${ex.title}`),
+    menu.append(h('button', { class: ex.id === currentId ? 'on' : '', 'data-id': ex.id, onclick: () => { currentId = ex.id; show(); } },
+      h('span', {}, `${numOf(ex)}. ${ex.title}`),
       h('span', { class: 'sc ' + (p ? cls(p.best) : '') }, p ? p.best + '%' : '–')));
   });
 }
 function renderTotal() {
-  const MAIN = EX.filter(e => e.chapter < 90);
-  const done = MAIN.filter(e => progress[e.id]).length;
-  const avg = Math.round(MAIN.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / MAIN.length);
-  const parts = [];
-  const chs = [...new Set(MAIN.map(e => e.chapter))];
-  chs.forEach(c => {
-    const l = MAIN.filter(e => e.chapter === c);
-    parts.push(`Cap. ${c}: ${Math.round(l.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / l.length)}%`);
-  });
-  const t = $('#total'); t.textContent = `Puntaje total: ${avg}% · ${done}/${MAIN.length} intentados`; t.title = parts.join('  |  ');
+  const avgOf = l => Math.round(l.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / l.length);
+  const parts = [1, 2].map(n => EX.filter(e => partOf(e) === n));
+  const t = $('#total');
+  t.textContent = `Parte 1: ${avgOf(parts[0])}% (${parts[0].filter(e => progress[e.id]).length}/${parts[0].length}) · Parte 2: ${avgOf(parts[1])}% (${parts[1].filter(e => progress[e.id]).length}/${parts[1].length})`;
+  const chs = [...new Set(EX.map(e => partOf(e) + ':' + e.chapter))];
+  t.title = chs.map(k => { const [pt, c] = k.split(':'); return `P${pt} cap. ${c}: ${avgOf(EX.filter(e => partOf(e) === +pt && e.chapter === +c))}%`; }).join('  |  ');
 }
 function show() {
   const ex = EX.find(e => e.id === currentId); const main = $('#main'); main.replaceChildren();
@@ -181,13 +181,14 @@ function show() {
   const r = RENDER[ex.type](ex);
   const res = h('div', { 'aria-live': 'polite' });
   const prog = progress[ex.id];
-  main.append(h('h2', {}, `Ejercicio ${ex.id} · ${ex.title}`));
+  main.append(h('h2', {}, `${partOf(ex) === 2 ? 'Parte 2 · ' : ''}Ejercicio ${numOf(ex)} · ${ex.title}`));
   if (ex.subtitle) main.append(h('p', { class: 'sub' }, ex.subtitle));
   (ex.images || []).forEach(f => {
     const img = h('img', { src: 'images/' + encodeURIComponent(f), alt: f, style: 'max-width:100%;display:block;margin:8px 0' });
     img.addEventListener('error', () => img.replaceWith(h('a', { class: 'imgref', href: IMG_LINKS[f] || '#', target: '_blank', rel: 'noopener' }, '🖼 Ver imagen del ejercicio: ' + f)));
     main.append(img);
   });
+  if (ex.table) main.append(h('div', { class: 'tbl' }, h('table', {}, h('thead', {}, h('tr', {}, ex.table.head.map(x => h('th', {}, x)))), h('tbody', {}, ex.table.rows.map(r => h('tr', {}, r.map(x => h('td', {}, x))))))));
   if (ex.instructions) main.append(h('div', { class: 'ins' }, ex.instructions));
   main.append(r.node);
   const check = h('button', { class: 'p', onclick: () => {

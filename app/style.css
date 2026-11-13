@@ -39,3 +39,5 @@ button.s{background:transparent;color:var(--ink);border:1px solid var(--line);pa
 @media(max-width:760px){.layout{flex-direction:column}nav{width:100%}}
 .tag{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--acc);border:1px solid var(--line);border-radius:999px;padding:0 8px;margin-right:6px;vertical-align:1px}
 .grid-wrap{overflow-x:auto;max-width:100%}
+nav h2.part{font-size:.95rem;margin:18px 0 0;padding-top:12px;border-top:1px solid var(--line)}nav h2.part:first-child{border-top:0;padding-top:0;margin-top:0}
+.tbl{overflow-x:auto;max-width:100%;margin:10px 0}.tbl table{border-collapse:collapse;font-size:.9rem}.tbl th,.tbl td{border:1px solid var(--line);padding:6px 10px;text-align:left}.tbl th{background:var(--bg)}

@@ -2,7 +2,7 @@
 import json
 r = lambda f: open(f, encoding='utf-8').read()
 w = lambda f, t: open(f, 'w', encoding='utf-8').write(t)
-base = json.loads(r('../data/exercises.json')); ref = json.loads(r('../data/examen_refuerzo.json'))
+base = json.loads(r('../data/exercises.json')); ref = json.loads(r('../data/parte2.json'))
 ex = 'window.EXERCISES = ' + json.dumps(base + ref, ensure_ascii=False) + ';\n'
 w('exercises.js', ex)
 css, js = r('style.css'), r('app.js')
