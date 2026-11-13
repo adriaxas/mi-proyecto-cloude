@@ -37,3 +37,5 @@ button.s{background:transparent;color:var(--ink);border:1px solid var(--line);pa
 .fb{font-size:.88rem;color:var(--mute)}
 .imgref{display:inline-block;margin:8px 0;padding:6px 10px;border:1px dashed var(--line);border-radius:8px;font-size:.9rem}
 @media(max-width:760px){.layout{flex-direction:column}nav{width:100%}}
+.tag{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--acc);border:1px solid var(--line);border-radius:999px;padding:0 8px;margin-right:6px;vertical-align:1px}
+.grid-wrap{overflow-x:auto;max-width:100%}

@@ -28,23 +28,28 @@ const setMark = (el, ok) => {
 };
 
 // ---------- Renderers: each returns { node, check() -> {correct,total} } ----------
+const shuffled = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 function renderQuiz(ex) {
   const wrap = h('div'); const qs = [];
   ex.data.questions.forEach((q, qi) => {
     const box = h('div', { class: 'q' });
     const correctN = q.answers.filter(a => a.correct).length;
     const radio = q.type === 'multichoice' || (q.type === 'multiselect' && correctN === 1);
-    box.append(h('div', {}, h('strong', {}, `${qi + 1}. `), q.text));
+    const isVF = q.answers.length === 2 && q.answers[0].text === 'VERDADERO';
+    const tag = q.type === 'short' ? 'Completar' : isVF ? 'Verdadero o falso' : q.type === 'multichoice' || correctN === 1 ? 'Opción múltiple' : 'Selección';
+    box.append(h('div', {}, h('strong', {}, `${qi + 1}. `), ex.id === 101 ? h('span', { class: 'tag' }, tag) : '', q.text));
     let getOk, fb = h('div', { class: 'fb' });
     if (q.type === 'short') {
       const inp = h('input', { type: 'text', 'aria-label': `Respuesta ${qi + 1}` });
       box.append(inp);
       getOk = () => { const v = norm(inp.value); const hit = q.answers.find(a => a.correct && norm(a.text) === v); return !!hit; };
     } else {
+      const labels = [];
       const inputs = q.answers.map((a, ai) => {
         const i = h('input', { type: radio ? 'radio' : 'checkbox', name: `q${ex.id}_${qi}` });
-        box.append(h('label', {}, i, ' ', a.text)); return i;
+        labels.push(h('label', {}, i, ' ', a.text)); return i;
       });
+      (q.shuffle ? shuffled(labels) : labels).forEach(l => box.append(l));
       getOk = () => q.answers.every((a, i) => inputs[i].checked === !!a.correct);
     }
     box.append(fb); qs.push({ box, getOk, q });
@@ -55,7 +60,7 @@ function renderQuiz(ex) {
     qs.forEach(({ box, getOk, q }) => {
       const ok = getOk(); if (ok) c++; setMark(box, ok);
       const fb = box.querySelector('.fb');
-      fb.textContent = ok ? '' : 'Respuesta correcta: ' + q.answers.filter(a => a.correct).map(a => a.text).join(' / ');
+      fb.textContent = ok ? '' : 'Respuesta correcta: ' + q.answers.filter(a => a.correct).map(a => a.text).join(' / ') + (q.explain ? ' — ' + q.explain : '');
     });
     return { correct: c, total: qs.length };
   } };
@@ -151,7 +156,7 @@ function renderMenu() {
   const menu = $('#menu'); menu.replaceChildren();
   let ch = null;
   EX.forEach(ex => {
-    if (ex.chapter !== ch) { ch = ex.chapter; menu.append(h('h3', {}, `Capítulo ${ch}`)); }
+    if (ex.chapter !== ch) { ch = ex.chapter; menu.append(h('h3', {}, ch >= 90 ? 'Examen de refuerzo' : `Capítulo ${ch}`)); }
     const p = progress[ex.id];
     menu.append(h('button', { class: ex.id === currentId ? 'on' : '', onclick: () => { currentId = ex.id; show(); } },
       h('span', {}, `${ex.id}. ${ex.title}`),
@@ -159,15 +164,16 @@ function renderMenu() {
   });
 }
 function renderTotal() {
-  const done = EX.filter(e => progress[e.id]).length;
-  const avg = Math.round(EX.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / EX.length);
+  const MAIN = EX.filter(e => e.chapter < 90);
+  const done = MAIN.filter(e => progress[e.id]).length;
+  const avg = Math.round(MAIN.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / MAIN.length);
   const parts = [];
-  const chs = [...new Set(EX.map(e => e.chapter))];
+  const chs = [...new Set(MAIN.map(e => e.chapter))];
   chs.forEach(c => {
-    const l = EX.filter(e => e.chapter === c);
+    const l = MAIN.filter(e => e.chapter === c);
     parts.push(`Cap. ${c}: ${Math.round(l.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / l.length)}%`);
   });
-  const t = $('#total'); t.textContent = `Puntaje total: ${avg}% · ${done}/${EX.length} intentados`; t.title = parts.join('  |  ');
+  const t = $('#total'); t.textContent = `Puntaje total: ${avg}% · ${done}/${MAIN.length} intentados`; t.title = parts.join('  |  ');
 }
 function show() {
   const ex = EX.find(e => e.id === currentId); const main = $('#main'); main.replaceChildren();
@@ -187,12 +193,12 @@ function show() {
   const check = h('button', { class: 'p', onclick: () => {
     if (locked) return;
     const { correct, total } = r.check();
-    const score = scoreOf(correct, total, fails);
+    const score = scoreOf(correct, total, ex.noPenalty ? 0 : fails);
     const p = progress[ex.id] || { best: 0, attempts: 0 };
     p.attempts++; p.last = score; p.best = Math.max(p.best, score); progress[ex.id] = p; save();
     const all = correct === total;
     res.replaceChildren(h('div', { class: 'result ' + (all ? 'good' : 'bad') },
-      `Correctas: ${correct}/${total} · Puntaje: ${score}%` + (fails ? ` (−${fails} por intentos fallidos)` : '') +
+      `Correctas: ${correct}/${total} · Puntaje: ${score}%` + (fails && !ex.noPenalty ? ` (−${fails} por intentos fallidos)` : '') +
       (all ? ' — ¡Correcto! Bien hecho.' : ' — Hay respuestas incorrectas, marcadas con ✘. Inténtalo nuevamente.')));
     if (all) { locked = true; check.disabled = true; } else fails++;
     renderMenu(); renderTotal();
