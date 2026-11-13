@@ -1,0 +1,2112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicios interactivos – Módulo 2</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#1d2433;--mute:#667085;--line:#dde2ec;--acc:#2f5bea;--ok:#1a8f4c;--okbg:#e6f6ec;--ko:#c62828;--kobg:#fdeaea}
+@media(prefers-color-scheme:dark){:root{--bg:#10141c;--card:#1a202c;--ink:#e8ecf4;--mute:#9aa4b8;--line:#2b3446;--acc:#7b9bff;--ok:#5fd18c;--okbg:#14301f;--ko:#ff8a8a;--kobg:#3a1c1c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+h1{font-size:1.15rem;margin:0}h1 span{color:var(--mute);font-weight:400}
+.total{font-weight:600}
+.layout{display:flex;gap:16px;max-width:1100px;margin:0 auto;padding:16px}
+nav{width:250px;flex:none}
+nav h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:14px 0 6px}
+nav button{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;padding:8px 10px;margin-bottom:4px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;cursor:pointer;font:inherit;font-size:.9rem}
+nav button.on{border-color:var(--acc);outline:2px solid var(--acc)}
+nav .sc{font-weight:700;white-space:nowrap}
+nav .sc.good{color:var(--ok)}nav .sc.bad{color:var(--ko)}
+main{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+main h2{margin:.1em 0 .2em;font-size:1.25rem}
+.sub{color:var(--mute);white-space:pre-line}.ins{background:var(--bg);border-radius:8px;padding:8px 12px;margin:12px 0}
+.q{border-top:1px solid var(--line);padding:12px 0}
+.q.ok{background:var(--okbg)}.q.ko{background:var(--kobg)}
+.q label{display:block;padding:3px 0;cursor:pointer}
+.mark{font-weight:700;margin-left:6px}.ok .mark,.mark.ok{color:var(--ok)}.ko .mark,.mark.ko{color:var(--ko)}
+select,input[type=text]{font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+input.ok{border-color:var(--ok);background:var(--okbg)}input.ko{border-color:var(--ko);background:var(--kobg)}
+.cloze{line-height:2.4;white-space:pre-line}.cloze input{width:9em}
+table.match td{padding:6px 8px;vertical-align:top}
+.grid{border-collapse:collapse;margin:12px 0}.grid td{width:30px;height:30px;padding:0;position:relative}
+.grid td.cell{border:1px solid var(--ink);background:#fff}
+.grid td.cell input{width:100%;height:100%;border:0;text-align:center;text-transform:uppercase;font-weight:700;color:#000;background:transparent;padding:0}
+.grid td.cell.ok{background:#bdebd0}.grid td.cell.ko{background:#f6c4c4}
+.grid .n{position:absolute;top:0;left:1px;font-size:9px;color:#444;pointer-events:none}
+.clues{columns:2 280px;font-size:.9rem}
+.actions{display:flex;gap:8px;align-items:center;margin-top:16px;flex-wrap:wrap}
+button.p{background:var(--acc);color:#fff;border:0;padding:9px 16px;border-radius:8px;font:inherit;cursor:pointer}
+button.s{background:transparent;color:var(--ink);border:1px solid var(--line);padding:9px 16px;border-radius:8px;font:inherit;cursor:pointer}
+.result{margin-top:14px;padding:12px;border-radius:8px;font-weight:600}
+.result.good{background:var(--okbg);color:var(--ok)}.result.bad{background:var(--kobg);color:var(--ko)}
+.fb{font-size:.88rem;color:var(--mute)}
+.imgref{display:inline-block;margin:8px 0;padding:6px 10px;border:1px dashed var(--line);border-radius:8px;font-size:.9rem}
+@media(max-width:760px){.layout{flex-direction:column}nav{width:100%}}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Ejercicios interactivos <span>Módulo 2</span></h1>
+  <div id="total" class="total" aria-live="polite"></div>
+</header>
+<div class="layout">
+  <nav id="menu" aria-label="Ejercicios"></nav>
+  <main id="main"></main>
+</div>
+<script>
+window.EXERCISES = [
+ {
+  "id": 17,
+  "chapter": 3,
+  "title": "PROPIEDADES DE LAS SUSTANCIAS IÓNICAS, COVALENTES Y METÁLICAS",
+  "subtitle": "En función de la información disponible para las sustancias A, B, C y D que se describen en el la tabla, responde:\n¿Cuál de estas sustancias es iónica? ¿Cuál metálica? ¿Cuál covalente?",
+  "instructions": "Para cada sustancia selecciona la única respuesta correcta",
+  "type": "quiz",
+  "images": [
+   "ej cap 3 17 PropCompuestos.jpg"
+  ],
+  "data": {
+   "questions": [
+    {
+     "type": "multichoice",
+     "text": "A es una sustancia",
+     "answers": [
+      {
+       "text": "Iónica",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "Covalente",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "Metálica",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "B es una sustancia",
+     "answers": [
+      {
+       "text": "Iónica",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "Covalente",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      },
+      {
+       "text": "Metálica",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "C es una sustancia",
+     "answers": [
+      {
+       "text": "Iónica",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "Covalente",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      },
+      {
+       "text": "Metálica",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "D es una sustancia",
+     "answers": [
+      {
+       "text": "Iónica",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      },
+      {
+       "text": "Covalente",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "Metálica",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": 18,
+  "chapter": 3,
+  "title": "COMPUESTOS IÓNICOS, COVALENTES y METÁLICOS",
+  "subtitle": "Para cada una de las siguientes propiedades indica si corresponden a compuestos iónicos, metálicos o covalentes.",
+  "instructions": "Despliega las opciones y elige la correcta",
+  "type": "match",
+  "images": [],
+  "data": {
+   "items": [
+    {
+     "left": "a) Conducen la corriente eléctrica sólo cuando están fundidos o disueltos.",
+     "correct": [
+      "COMPUESTOS IÓNICOS"
+     ]
+    },
+    {
+     "left": "b) Son buenos conductores del calor y la electricidad.",
+     "correct": [
+      "COMPUESTOS METÁLICOS"
+     ]
+    },
+    {
+     "left": "c) Presentan uniones en las que los núcleos de los átomos quedan envueltos en una nube de electrones.",
+     "correct": [
+      "COMPUESTOS METÁLICOS"
+     ]
+    },
+    {
+     "left": "d) Tiene bajos puntos de fusión y de ebullición.",
+     "correct": [
+      "COMPUESTOS COVALENTES"
+     ]
+    },
+    {
+     "left": "e) Son dúctiles y maleables.",
+     "correct": [
+      "COMPUESTOS METÁLICOS"
+     ]
+    },
+    {
+     "left": "f) Presentan uniones en las que se forma un anión y un catión.",
+     "correct": [
+      "COMPUESTOS IÓNICOS"
+     ]
+    },
+    {
+     "left": "g) Son malos conductores del calor y la electricidad.",
+     "correct": [
+      "COMPUESTOS COVALENTES"
+     ]
+    },
+    {
+     "left": "h) Presentan uniones en las que comparten electrones de a pares.",
+     "correct": [
+      "COMPUESTOS COVALENTES"
+     ]
+    }
+   ],
+   "options": [
+    "COMPUESTOS METÁLICOS",
+    "COMPUESTOS COVALENTES",
+    "COMPUESTOS IÓNICOS"
+   ]
+  }
+ },
+ {
+  "id": 19,
+  "chapter": 3,
+  "title": "LA MOLÉCULA DE OZONO",
+  "subtitle": "La anterior es una representación simbólica de una molécula de ozono. Luego de considerar la imagen, contesta las preguntas:",
+  "instructions": "",
+  "type": "quiz",
+  "images": [
+   "ozono.jpg"
+  ],
+  "data": {
+   "questions": [
+    {
+     "type": "short",
+     "text": "¿Átomos de qué elementos están asociados?",
+     "answers": [
+      {
+       "text": "oxígeno",
+       "correct": true,
+       "feedback": ""
+      }
+     ]
+    },
+    {
+     "type": "short",
+     "text": "¿Cuántos átomos hay?",
+     "answers": [
+      {
+       "text": "3",
+       "correct": true,
+       "feedback": ""
+      },
+      {
+       "text": "tres",
+       "correct": true,
+       "feedback": ""
+      }
+     ]
+    },
+    {
+     "type": "short",
+     "text": "¿Cuál sería la fórmula de este compuesto?",
+     "answers": [
+      {
+       "text": "O3",
+       "correct": true,
+       "feedback": ""
+      }
+     ]
+    },
+    {
+     "type": "short",
+     "text": "¿Qué representan los puntitos negros que se ven en la figura?",
+     "answers": [
+      {
+       "text": "electrones del último nivel",
+       "correct": true,
+       "feedback": ""
+      }
+     ]
+    },
+    {
+     "type": "short",
+     "text": "¿Cómo se clasifica la asociación entre estos átomos: unión iónica, metálica o covalente?",
+     "answers": [
+      {
+       "text": "covalente",
+       "correct": true,
+       "feedback": ""
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": 20,
+  "chapter": 4,
+  "title": "TIPOS DE COMPUESTOS QUÍMICOS",
+  "subtitle": "Ejercicio de opción múltiple",
+  "instructions": "Para cada compuesto químico selecciona la única opción que sea correcta",
+  "type": "quiz",
+  "images": [],
+  "data": {
+   "questions": [
+    {
+     "type": "multiselect",
+     "text": "KOH",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": false,
+       "feedback": "No, es una base"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es una base"
+      },
+      {
+       "text": "Base",
+       "correct": true,
+       "feedback": "Es una base"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es una base"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "SO₂",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": true,
+       "feedback": "Es un óxido"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es Óxido"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es Óxido"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es Óxido"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "CaO",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": true,
+       "feedback": "Es óxido"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "H₂SO₄",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": false,
+       "feedback": "No, es un ácido"
+      },
+      {
+       "text": "Ácido",
+       "correct": true,
+       "feedback": "Es un ácido"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es un ácido"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es un ácido"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "PbO",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": true,
+       "feedback": "Es un óxido"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "NaCl",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": false,
+       "feedback": "No, es una sal"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es una sal"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es una sal"
+      },
+      {
+       "text": "Sal",
+       "correct": true,
+       "feedback": "Es una sal"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "Sr(OH)2",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": false,
+       "feedback": "No, es una base"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es una base"
+      },
+      {
+       "text": "Base",
+       "correct": true,
+       "feedback": "Es una base"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es una base"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "CO",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": true,
+       "feedback": "Es un óxido"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es un óxido"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "NH3",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": false,
+       "feedback": "Es una base"
+      },
+      {
+       "text": "Ácido",
+       "correct": false,
+       "feedback": "Es una base"
+      },
+      {
+       "text": "Base",
+       "correct": true,
+       "feedback": "Es una base"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "Es una base"
+      }
+     ]
+    },
+    {
+     "type": "multiselect",
+     "text": "HBr",
+     "answers": [
+      {
+       "text": "Óxido",
+       "correct": false,
+       "feedback": "No, es un ácido"
+      },
+      {
+       "text": "Ácido",
+       "correct": true,
+       "feedback": "Es un ácido"
+      },
+      {
+       "text": "Base",
+       "correct": false,
+       "feedback": "No, es un ácido"
+      },
+      {
+       "text": "Sal",
+       "correct": false,
+       "feedback": "No, es un ácido"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": 21,
+  "chapter": 4,
+  "title": "ESCALA DE pH",
+  "subtitle": "Determiná qué tipo de solución corresponde a los siguientes valores de pH",
+  "instructions": "Desplegá el menú y seleccioná la respuesta correcta",
+  "type": "match",
+  "images": [],
+  "data": {
+   "items": [
+    {
+     "left": "- pH 4",
+     "correct": [
+      "Solución ácida"
+     ]
+    },
+    {
+     "left": "- pH 7,5",
+     "correct": [
+      "Solución básica"
+     ]
+    },
+    {
+     "left": "- pH 11",
+     "correct": [
+      "Solución básica"
+     ]
+    },
+    {
+     "left": "- pH 1,9",
+     "correct": [
+      "Solución ácida"
+     ]
+    },
+    {
+     "left": "- pH 7",
+     "correct": [
+      "Solución neutra"
+     ]
+    }
+   ],
+   "options": [
+    "Solución básica",
+    "Solución neutra",
+    "Solución ácida"
+   ]
+  }
+ },
+ {
+  "id": 22,
+  "chapter": 4,
+  "title": "INDICADORES ÁCIDO-BASE",
+  "subtitle": "Rellenar los espacios en blanco",
+  "instructions": "Completá las palabras que faltan en los espacios en blanco. Luego presioná \"Comprobar\" para revisar tus respuestas. El botón \"Pista\" te dará una letra de la palabra. Tené en cuenta que las pistas te harán perder puntaje.\nRecordá colocar las tildes donde corresponda, de otro modo la palabra será tomada como incorrecta.",
+  "type": "cloze",
+  "images": [],
+  "data": {
+   "text": "1- El papel tornasol rojo presenta color {{1}} frente a una solución neutra.\n\n2- El papel tornasol azul presenta color {{2}} frente a una solución neutra.",
+   "gaps": [
+    {
+     "n": 1,
+     "answers": [
+      "rojo"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 2,
+     "answers": [
+      "azul"
+     ],
+     "hint": ""
+    }
+   ],
+   "caseSensitive": false
+  }
+ },
+ {
+  "id": 23,
+  "chapter": 5,
+  "title": "CLASIFICACIÓN DE REACCIONES QUÍMICAS",
+  "subtitle": "Ejercicio de emparejamiento",
+  "instructions": "Despliega las opciones de la derecha y elige la respuesta correcta.",
+  "type": "match",
+  "images": [],
+  "data": {
+   "items": [
+    {
+     "left": "a) Los productos pueden reaccionar entre sí para regresar a su estado anterior.",
+     "correct": [
+      "REACCIONES REVERSIBLES"
+     ]
+    },
+    {
+     "left": "b) Consiste en la unión de dos o más sustancias sencillas para formar una más compleja.",
+     "correct": [
+      "REACCIONES DE SÍNTESIS"
+     ]
+    },
+    {
+     "left": "c) Reacciones que se realizan en un solo sentido. Los productos formados no pueden, bajo condiciones normales, reaccionar entre sí para retornar a su estado original.",
+     "correct": [
+      "REACCIONES IRREVERSIBLES"
+     ]
+    },
+    {
+     "left": "d) Reacciones que generan cambios de energía.",
+     "correct": [
+      "REACCIONES TERMOQUÍMICAS"
+     ]
+    },
+    {
+     "left": "e) Reacciones donde intervienen la acción de un ácido sobre una base, produciendo agua y sal.",
+     "correct": [
+      "REACCIONES DE NEUTRALIZACIÓN"
+     ]
+    },
+    {
+     "left": "f) Una sustancia compleja, se descompone en 2 o más sustancias sencillas.",
+     "correct": [
+      "REACCIONES DE DESCOMPOSICIÓN"
+     ]
+    }
+   ],
+   "options": [
+    "REACCIONES DE SÍNTESIS",
+    "REACCIONES DE NEUTRALIZACIÓN",
+    "REACCIONES DE DESCOMPOSICIÓN",
+    "REACCIONES REVERSIBLES",
+    "REACCIONES IRREVERSIBLES",
+    "REACCIONES TERMOQUÍMICAS"
+   ]
+  }
+ },
+ {
+  "id": 24,
+  "chapter": 5,
+  "title": "REACTIVOS Y PRODUCTOS",
+  "subtitle": "En las siguientes frases, que describen diferentes reacciones químicas, identificar cuáles son los reactivos y cuáles son los productos.",
+  "instructions": "En los espacios en blanco completá con una R si se trata de un reactivo o una P si se trata de un producto.",
+  "type": "cloze",
+  "images": [],
+  "data": {
+   "text": "a) En la fotosíntesis el dióxido de carbono y el agua se combinan para formar glucosa y oxígeno.\n - Dióxido de carbono {{1}} \n - Agua {{2}} \n - Glucosa {{3}} \n - Oxígeno {{4}} \n\nb) El bicarbonato de sodio y el vinagre al mezclarse generan una sal.\n - Bicarbonato de sodio {{5}} \n - Vinagre {{6}} \n - Sal {{7}} \n\nc) Un clavo de hierro se oxida generando óxido de hierro.\n - Hierro {{8}} \n - Oxígeno {{9}} \n - Óxido de hierro {{10}} \n\nd) Las cenizas de papel son el resultado de quemar un papel.\n - Cenizas de papel {{11}} \n - Papel {{12}} \n\ne) La digestión es el proceso de transformación de los alimentos, previamente ingeridos, en sustancias más sencillas para ser absorbidos.\n - Alimentos {{13}} \n - Sustancias más sencillas {{14}}",
+   "gaps": [
+    {
+     "n": 1,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 2,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 3,
+     "answers": [
+      "P",
+      "p"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 4,
+     "answers": [
+      "P",
+      "p"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 5,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 6,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 7,
+     "answers": [
+      "P",
+      "p"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 8,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 9,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 10,
+     "answers": [
+      "P",
+      "p"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 11,
+     "answers": [
+      "P",
+      "p"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 12,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 13,
+     "answers": [
+      "R",
+      "r"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 14,
+     "answers": [
+      "P",
+      "p"
+     ],
+     "hint": ""
+    }
+   ],
+   "caseSensitive": false
+  }
+ },
+ {
+  "id": 25,
+  "chapter": 5,
+  "title": "ÁTOMOS DE HIDRÓGENO Y OXÍGENO",
+  "subtitle": "Rellenar los espacios en blanco",
+  "instructions": "Completá en cada espacio en blanco el número de átomos que corresponda.",
+  "type": "cloze",
+  "images": [],
+  "data": {
+   "text": "1- En una molécula de H2SO4 hay {{1}} átomos de hidrógeno y {{2}} átomos de oxígeno.\n\n2- En una unidad fórmula de molécula de Ca(OH)2 hay {{3}} átomos de hidrógeno y {{4}} átomos de oxígeno.\n\n3- En una unidad fórmula de molécula de Mg(HCO3)2 hay {{5}} átomos de hidrógeno y {{6}} átomos de oxígeno.\n\n4- En una unidad fórmula de molécula de Al2(SO4)3 hay {{7}} átomos de aluminio, {{8}} átomos de azufre y {{9}} átomos de oxígeno.",
+   "gaps": [
+    {
+     "n": 1,
+     "answers": [
+      "2"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 2,
+     "answers": [
+      "4"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 3,
+     "answers": [
+      "2"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 4,
+     "answers": [
+      "2"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 5,
+     "answers": [
+      "2"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 6,
+     "answers": [
+      "6"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 7,
+     "answers": [
+      "2"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 8,
+     "answers": [
+      "3"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 9,
+     "answers": [
+      "12"
+     ],
+     "hint": ""
+    }
+   ],
+   "caseSensitive": false
+  }
+ },
+ {
+  "id": 26,
+  "chapter": 6,
+  "title": "BIOMOLÉCULAS",
+  "subtitle": "Palabras Cruzadas",
+  "instructions": "Completá el crucigrama. Hacé click sobre uno de los número del crucigrama para que aparezcan las preguntas. Escribí la palabra y luego presioná \"Introducir Respuesta\".\nSi estás confundido, hacé click sobre \"Pista\" para que aparezca una de las letras de la palabra. Luego, hacé click sobre \"Comprobar\" para verificar tus respuestas.",
+  "type": "cross",
+  "images": [],
+  "data": {
+   "grid": [
+    [
+     "",
+     "T",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "G",
+     "L",
+     "U",
+     "C",
+     "I",
+     "D",
+     "O",
+     "S",
+     ""
+    ],
+    [
+     "",
+     "R",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "A",
+     ""
+    ],
+    [
+     "B",
+     "I",
+     "O",
+     "G",
+     "E",
+     "N",
+     "E",
+     "S",
+     "I",
+     "C",
+     "O",
+     "S",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "C",
+     ""
+    ],
+    [
+     "",
+     "G",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "A",
+     ""
+    ],
+    [
+     "E",
+     "L",
+     "A",
+     "S",
+     "T",
+     "I",
+     "N",
+     "A",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "R",
+     ""
+    ],
+    [
+     "",
+     "I",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "Q",
+     "",
+     "",
+     "",
+     "",
+     "O",
+     ""
+    ],
+    [
+     "",
+     "C",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "U",
+     "",
+     "",
+     "",
+     "",
+     "S",
+     ""
+    ],
+    [
+     "H",
+     "E",
+     "M",
+     "O",
+     "G",
+     "L",
+     "O",
+     "B",
+     "I",
+     "N",
+     "A",
+     "",
+     "E",
+     "N",
+     "Z",
+     "I",
+     "M",
+     "A",
+     "S"
+    ],
+    [
+     "",
+     "R",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "R",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "V",
+     "I",
+     "T",
+     "A",
+     "M",
+     "I",
+     "N",
+     "A",
+     "S",
+     "",
+     "",
+     "",
+     "A",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "D",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "T",
+     "",
+     "",
+     "",
+     "C",
+     "",
+     ""
+    ],
+    [
+     "C",
+     "O",
+     "L",
+     "E",
+     "S",
+     "T",
+     "E",
+     "R",
+     "O",
+     "L",
+     "",
+     "L",
+     "I",
+     "P",
+     "I",
+     "D",
+     "O",
+     "S",
+     ""
+    ],
+    [
+     "",
+     "S",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "N",
+     "",
+     "",
+     "",
+     "L",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "P",
+     "R",
+     "O",
+     "T",
+     "E",
+     "I",
+     "N",
+     "A",
+     "S",
+     "",
+     "",
+     "A",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "G",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "E",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "N",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     "G",
+     "L",
+     "U",
+     "C",
+     "O",
+     "S",
+     "A"
+    ]
+   ],
+   "across": [
+    {
+     "n": 2,
+     "clue": "Biomoléculas que contienen carbono, hidrógeno y oxígeno. Sustancias de alto valor energético que pueden formar polímeros.",
+     "answer": "GLUCIDOS",
+     "row": 0,
+     "col": 10
+    },
+    {
+     "n": 4,
+     "clue": "Elementos químicos que forman parte de los seres vivos.",
+     "answer": "BIOGENESICOS",
+     "row": 2,
+     "col": 0
+    },
+    {
+     "n": 5,
+     "clue": "Proteína que forma gran parte de las venas y arterias.",
+     "answer": "ELASTINA",
+     "row": 4,
+     "col": 0
+    },
+    {
+     "n": 7,
+     "clue": "Proteína de los glóbulos rojos de la sangre encargada de transportar oxígeno.",
+     "answer": "HEMOGLOBINA",
+     "row": 7,
+     "col": 0
+    },
+    {
+     "n": 8,
+     "clue": "Proteínas cuya función es aumentar la velocidad de las reacciones químicas de los organismos.",
+     "answer": "ENZIMAS",
+     "row": 7,
+     "col": 12
+    },
+    {
+     "n": 9,
+     "clue": "Conjunto de compuestos orgánicos diversos que, en cantidades mínimas, son indispensables para regular el funcionamiento del organismo.",
+     "answer": "VITAMINAS",
+     "row": 9,
+     "col": 0
+    },
+    {
+     "n": 11,
+     "clue": "Tipo de lípido imprescindible para la vida de las personas. Participa en la formación de sustancias importantes (ej vitamina D).",
+     "answer": "COLESTEROL",
+     "row": 11,
+     "col": 0
+    },
+    {
+     "n": 12,
+     "clue": "Tipo de biomolécula de la cual los triglicéridos son uno de los más frecuentes que se pueden enontrar en los seres vivos.",
+     "answer": "LIPIDOS",
+     "row": 11,
+     "col": 11
+    },
+    {
+     "n": 13,
+     "clue": "Biopolímeros que forman parte de los seres vivos. Están formados por átomos de carbono, hidrógeno, oxígeno, nitrógeno y azufre agrupados en unidades llamadas aminoácidos.",
+     "answer": "PROTEINAS",
+     "row": 13,
+     "col": 5
+    },
+    {
+     "n": 14,
+     "clue": "Monosacárido elaborado durante el proceso de fotosíntesis a partir de dióxido de carbono del aire y el agua, usando como fuente de energía la luz solar.",
+     "answer": "GLUCOSA",
+     "row": 17,
+     "col": 12
+    }
+   ],
+   "down": [
+    {
+     "n": 1,
+     "clue": "Lípidos que actúan como fuente de energía cuando las reservas de hidratos de carbono se acaban; aislantes de órganos y de tejidos; también las utiliza el organismo para disolver ciertas vitaminas como la vitamina A .",
+     "answer": "TRIGLICERIDOS",
+     "row": 0,
+     "col": 1
+    },
+    {
+     "n": 3,
+     "clue": "Disacárido utilizado para endulzar un té o para hacer postres.",
+     "answer": "SACAROSA",
+     "row": 0,
+     "col": 17
+    },
+    {
+     "n": 6,
+     "clue": "Proteína que forma gran parte de nuestras uñas, piel y pelo.",
+     "answer": "QUERATINA",
+     "row": 5,
+     "col": 12
+    },
+    {
+     "n": 10,
+     "clue": "Proteína principal de los cartílagos, ligamentos y tendones.",
+     "answer": "COLAGENO",
+     "row": 10,
+     "col": 16
+    }
+   ]
+  }
+ },
+ {
+  "id": 27,
+  "chapter": 6,
+  "title": "COMPUESTOS ORGÁNICOS",
+  "subtitle": "Indicar si las siguientes afirmaciones son verdaderas o falsas",
+  "instructions": "Para cada frase selecciona VERDADERO o FALSO",
+  "type": "quiz",
+  "images": [],
+  "data": {
+   "questions": [
+    {
+     "type": "multichoice",
+     "text": "Las sustancias orgánicas solo se pueden obtener a partir de organismos vivos.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": false,
+       "feedback": "Incorrecto"
+      },
+      {
+       "text": "FALSO",
+       "correct": true,
+       "feedback": "Correcto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "En todas las sustancias orgánicas encontramos siempre presente átomos del elemento carbono.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": true,
+       "feedback": "Correcto"
+      },
+      {
+       "text": "FALSO",
+       "correct": false,
+       "feedback": "Incorrecto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "El tipo de unión química que predomina en las sustancias orgánicas es la iónica.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": false,
+       "feedback": "Incorrecto"
+      },
+      {
+       "text": "FALSO",
+       "correct": true,
+       "feedback": "Correcto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "La propiedad particular del elemento carbono, que explica la existencia de gran cantidad de compuestos orgánicos, se llama concatenación.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": true,
+       "feedback": "Correcto"
+      },
+      {
+       "text": "FALSO",
+       "correct": false,
+       "feedback": "Incorrecto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "Los elementos biogenésicos son únicamente el carbono y el hidrógeno.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": false,
+       "feedback": "Incorrecto"
+      },
+      {
+       "text": "FALSO",
+       "correct": true,
+       "feedback": "Correcto"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": 28,
+  "chapter": 6,
+  "title": "MOLÉCULAS ORGÁNICAS",
+  "subtitle": "Ejercicio de opción múltiple",
+  "instructions": "Para cada frase selecciona la única respuesta correcta",
+  "type": "quiz",
+  "images": [],
+  "data": {
+   "questions": [
+    {
+     "type": "multichoice",
+     "text": "Todos los compuestos orgánicos contienen...",
+     "answers": [
+      {
+       "text": "Oxígeno",
+       "correct": false,
+       "feedback": "No es correcto"
+      },
+      {
+       "text": "Fósforo",
+       "correct": false,
+       "feedback": "No es correcto"
+      },
+      {
+       "text": "Carbono",
+       "correct": true,
+       "feedback": "Correcto"
+      },
+      {
+       "text": "Nitrógeno",
+       "correct": false,
+       "feedback": "No es correcto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "Los elementos llamados biogenésicos son...",
+     "answers": [
+      {
+       "text": "C, H, S, N",
+       "correct": false,
+       "feedback": "No es correcto"
+      },
+      {
+       "text": "C, H, O, N",
+       "correct": true,
+       "feedback": "Correcto"
+      },
+      {
+       "text": "C, O, H, P",
+       "correct": false,
+       "feedback": "No es correcto"
+      },
+      {
+       "text": "C, H, Cl, O",
+       "correct": false,
+       "feedback": "No es correcto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "En los compuestos orgánicos predomina la unión...",
+     "answers": [
+      {
+       "text": "metálica",
+       "correct": false,
+       "feedback": "No es correcto"
+      },
+      {
+       "text": "covalente",
+       "correct": true,
+       "feedback": "Correcto"
+      },
+      {
+       "text": "iónica",
+       "correct": false,
+       "feedback": "No es correcto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "Las sustancias orgánicas son compuestos...",
+     "answers": [
+      {
+       "text": "termoestables",
+       "correct": false,
+       "feedback": "No es correcto"
+      },
+      {
+       "text": "se descomponen con facilidad",
+       "correct": true,
+       "feedback": "Correcto"
+      },
+      {
+       "text": "solubles en agua",
+       "correct": false,
+       "feedback": "No es correcto"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": 29,
+  "chapter": 6,
+  "title": "COMBUSTIÓN",
+  "subtitle": "Indicá si las siguientes afirmaciones son VERDADERAS o FALSAS",
+  "instructions": "Para cada frase selecciona la única respuesta correcta",
+  "type": "quiz",
+  "images": [],
+  "data": {
+   "questions": [
+    {
+     "type": "multichoice",
+     "text": "En una reacción de combustión los reactivos arden en presencia de dióxido de carbono.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "FALSO",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "Cuando una reacción de combustión se produce con escasa disponibilidad de oxígeno se obtiene como producto carbón, agua y energía.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      },
+      {
+       "text": "FALSO",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "Una reacción de combustión es completa cuando se produce con abundante disponibilidad de oxígeno.",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      },
+      {
+       "text": "FALSO",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      }
+     ]
+    },
+    {
+     "type": "multichoice",
+     "text": "Los productos que se obtienen en una combustión completa son agua y carbón (C).",
+     "answers": [
+      {
+       "text": "VERDADERO",
+       "correct": false,
+       "feedback": "Intento incorrecto"
+      },
+      {
+       "text": "FALSO",
+       "correct": true,
+       "feedback": "¡Correcto!"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": 30,
+  "chapter": 7,
+  "title": "PRODUCTOS DE ORIGEN PETROQUÍMICO",
+  "subtitle": "En la lista de materiales que se muestra a continuación indicá cuáles se obtienen del petróleo y cuáles no tienen origen petroquímico",
+  "instructions": "Desplegá el menú y seleccioná la respuesta correcta",
+  "type": "match",
+  "images": [],
+  "data": {
+   "items": [
+    {
+     "left": "VIDRIO",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "SAL DE MESA",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "PAPEL",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "ACEITES COMESTIBLES",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "GAS NATURAL",
+     "correct": [
+      "SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "PLÁSTICOS",
+     "correct": [
+      "SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "NAFTA",
+     "correct": [
+      "SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "ARENA",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "HARINA",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "MÁRMOL",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "ACEITES LUBRICANTES",
+     "correct": [
+      "SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "MADERA",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "BARNIZ",
+     "correct": [
+      "SE OBTIENE DEL PETRÓLEO"
+     ]
+    },
+    {
+     "left": "ROCAS",
+     "correct": [
+      "NO SE OBTIENE DEL PETRÓLEO"
+     ]
+    }
+   ],
+   "options": [
+    "NO SE OBTIENE DEL PETRÓLEO",
+    "SE OBTIENE DEL PETRÓLEO"
+   ]
+  }
+ },
+ {
+  "id": 31,
+  "chapter": 7,
+  "title": "COMBUSTIBLES FÓSILES",
+  "subtitle": "Rellenar los espacios en blanco",
+  "instructions": "Ubicá las palabras de la siguiente lista en los espacios en blanco. Luego presioná \"Comprobar respuesta\" para revisar tus respuestas. El botón \"Pista\" te dará una letra de la palabra. Tené en cuenta que las pistas te harán perder puntaje.\nRecordá colocar las tildes donde corresponda, de otro modo la palabra será tomada como incorrecta.",
+  "type": "cloze",
+  "images": [],
+  "data": {
+   "text": "El gas natural es un gas de aspecto {{1}} y su composición es 80 % {{2}}. Se formó hace {{3}} de años cuando una serie de {{4}} descompuestos quedaron sepultados bajo lodo y arena, en lo más profundo de antiguos lagos y {{5}}. En la medida que se acumulaba {{6}} , arena y sedimentos, se fueron formando capas de roca a gran {{7}} . La {{8}} causada por el peso sobre estas capas, más el calor de la Tierra, transformaron lentamente el material orgánico en {{9}} y en gas natural.\nEl petróleo crudo es un líquido aceitoso, inflamable, cuyo color varía de incoloro a {{10}} , su composición es un mezcla de {{11}} .\nEl carbón es un sólido de color negro cuya composición es {{12}} , hidrocarburos volátiles, azufre y {{13}} .",
+   "gaps": [
+    {
+     "n": 1,
+     "answers": [
+      "incoloro"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 2,
+     "answers": [
+      "metano"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 3,
+     "answers": [
+      "millones"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 4,
+     "answers": [
+      "organismos",
+      "seres vivos"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 5,
+     "answers": [
+      "océanos",
+      "mares"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 6,
+     "answers": [
+      "lodo"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 7,
+     "answers": [
+      "profundidad"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 8,
+     "answers": [
+      "presión"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 9,
+     "answers": [
+      "petróleo crudo"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 10,
+     "answers": [
+      "negro"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 11,
+     "answers": [
+      "hidrocarburos"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 12,
+     "answers": [
+      "carbono"
+     ],
+     "hint": ""
+    },
+    {
+     "n": 13,
+     "answers": [
+      "nitrógeno"
+     ],
+     "hint": ""
+    }
+   ],
+   "caseSensitive": false,
+   "wordList": [
+    "carbono",
+    "hidrocarburos",
+    "incoloro",
+    "lodo",
+    "metano",
+    "millones",
+    "negro",
+    "nitrógeno",
+    "océanos",
+    "organismos",
+    "petróleo crudo",
+    "presión",
+    "profundidad"
+   ]
+  }
+ }
+];
+</script>
+<script>
+(() => {
+'use strict';
+const EX = window.EXERCISES;
+const KEY = 'modulo2-progreso-v1';
+const IMG_LINKS = {
+  'ej cap 3 17 PropCompuestos.jpg': 'https://drive.google.com/file/d/1WV2570vHZ2JKUD9LYktOuRs-Z2v7vX5q/view',
+  'ozono.jpg': 'https://drive.google.com/file/d/1EyPSDeEI1e7Cq1-bWaphESJ_JBMF3KkV/view'
+};
+let progress = {};
+try { progress = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} };
+
+const $ = (s, r = document) => r.querySelector(s);
+function h(tag, attrs = {}, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') el.className = v; else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const k of kids.flat()) el.append(k instanceof Node ? k : document.createTextNode(k));
+  return el;
+}
+const norm = (s, cs) => { s = String(s).trim().replace(/\s+/g, ' '); return cs ? s : s.toLowerCase(); };
+const setMark = (el, ok) => {
+  el.classList.remove('ok', 'ko'); el.classList.add(ok ? 'ok' : 'ko');
+  const old = el.querySelector(':scope > .mark'); if (old) old.remove();
+  if (!el.matches('input,td')) el.append(h('span', { class: 'mark' }, ok ? '✔' : '✘'));
+};
+
+// ---------- Renderers: each returns { node, check() -> {correct,total} } ----------
+function renderQuiz(ex) {
+  const wrap = h('div'); const qs = [];
+  ex.data.questions.forEach((q, qi) => {
+    const box = h('div', { class: 'q' });
+    const correctN = q.answers.filter(a => a.correct).length;
+    const radio = q.type === 'multichoice' || (q.type === 'multiselect' && correctN === 1);
+    box.append(h('div', {}, h('strong', {}, `${qi + 1}. `), q.text));
+    let getOk, fb = h('div', { class: 'fb' });
+    if (q.type === 'short') {
+      const inp = h('input', { type: 'text', 'aria-label': `Respuesta ${qi + 1}` });
+      box.append(inp);
+      getOk = () => { const v = norm(inp.value); const hit = q.answers.find(a => a.correct && norm(a.text) === v); return !!hit; };
+    } else {
+      const inputs = q.answers.map((a, ai) => {
+        const i = h('input', { type: radio ? 'radio' : 'checkbox', name: `q${ex.id}_${qi}` });
+        box.append(h('label', {}, i, ' ', a.text)); return i;
+      });
+      getOk = () => q.answers.every((a, i) => inputs[i].checked === !!a.correct);
+    }
+    box.append(fb); qs.push({ box, getOk, q });
+    wrap.append(box);
+  });
+  return { node: wrap, check() {
+    let c = 0;
+    qs.forEach(({ box, getOk }) => { const ok = getOk(); if (ok) c++; setMark(box, ok); });
+    return { correct: c, total: qs.length };
+  } };
+}
+
+function renderMatch(ex) {
+  const { items, options } = ex.data; const rows = [];
+  const tb = h('tbody');
+  items.forEach((it, i) => {
+    const sel = h('select', { 'aria-label': it.left }, h('option', { value: '' }, '???'), options.map(o => h('option', { value: o }, o)));
+    const mk = h('td');
+    tb.append(h('tr', {}, h('td', {}, it.left), h('td', {}, sel), mk));
+    rows.push({ it, sel, mk });
+  });
+  return { node: h('table', { class: 'match' }, tb), check() {
+    let c = 0;
+    rows.forEach(({ it, sel, mk }) => {
+      const ok = it.correct.includes(sel.value); if (ok) c++;
+      mk.textContent = ok ? '✔' : '✘'; mk.className = 'mark ' + (ok ? 'ok' : 'ko');
+    });
+    return { correct: c, total: rows.length };
+  } };
+}
+
+function renderCloze(ex) {
+  const { text, gaps, caseSensitive, wordList } = ex.data; const fields = [];
+  const box = h('div', { class: 'cloze' });
+  text.split(/(\{\{\d+\}\})/).forEach(part => {
+    const m = part.match(/^\{\{(\d+)\}\}$/);
+    if (!m) { box.append(part); return; }
+    const gap = gaps.find(g => g.n === +m[1]);
+    const inp = h('input', { type: 'text', 'aria-label': `Hueco ${gap.n}`, title: gap.hint || '', autocomplete: 'off' });
+    fields.push({ inp, gap }); box.append(inp);
+  });
+  const node = h('div');
+  if (wordList && wordList.length) node.append(h('p', { class: 'fb' }, 'Palabras: ' + wordList.join(' · ')));
+  node.append(box);
+  return { node, check() {
+    let c = 0;
+    fields.forEach(({ inp, gap }) => {
+      const ok = gap.answers.some(a => norm(a, caseSensitive) === norm(inp.value, caseSensitive));
+      if (ok) c++; setMark(inp, ok);
+    });
+    return { correct: c, total: fields.length };
+  } };
+}
+
+function renderCross(ex) {
+  const { grid, across, down } = ex.data;
+  const tb = h('tbody'); const inputs = {};
+  const nums = {};
+  [...across, ...down].forEach(w => { nums[w.row + ',' + w.col] = w.n; });
+  grid.forEach((row, r) => {
+    const tr = h('tr');
+    row.forEach((ch, c) => {
+      if (!ch) { tr.append(h('td')); return; }
+      const inp = h('input', { type: 'text', maxlength: 1, 'aria-label': `Fila ${r + 1}, columna ${c + 1}` });
+      inp.addEventListener('input', () => { inp.value = inp.value.toUpperCase(); });
+      const td = h('td', { class: 'cell' }, inp);
+      if (nums[r + ',' + c]) td.append(h('span', { class: 'n' }, String(nums[r + ',' + c])));
+      inputs[r + ',' + c] = { td, inp, ch }; tr.append(td);
+    });
+    tb.append(tr);
+  });
+  const clues = (title, list) => h('div', {}, h('h4', {}, title), h('ol', { class: 'clues' }, list.map(w => h('li', { value: w.n }, w.clue))));
+  const node = h('div', {}, h('table', { class: 'grid' }, tb), clues('Horizontales', across), clues('Verticales', down));
+  const words = [...across.map(w => ({ ...w, dr: 0, dc: 1 })), ...down.map(w => ({ ...w, dr: 1, dc: 0 }))];
+  return { node, check() {
+    let c = 0; const bad = new Set();
+    words.forEach(w => {
+      const cells = [...w.answer].map((_, i) => inputs[(w.row + w.dr * i) + ',' + (w.col + w.dc * i)]);
+      const ok = cells.every((x, i) => x && x.inp.value.toUpperCase() === w.answer[i]);
+      if (ok) c++; else cells.forEach(x => x && bad.add(x));
+    });
+    Object.values(inputs).forEach(x => { x.td.classList.remove('ok', 'ko'); x.td.classList.add(bad.has(x) ? 'ko' : (x.inp.value ? 'ok' : 'ko')); });
+    return { correct: c, total: words.length };
+  } };
+}
+
+const RENDER = { quiz: renderQuiz, match: renderMatch, cloze: renderCloze, cross: renderCross };
+
+// ---------- Scoring ----------
+// Puntaje = (aciertos − intentos fallidos previos) / total × 100, como en Hot Potatoes.
+function scoreOf(correct, total, fails) { return Math.max(0, Math.round(100 * (correct - fails) / total)); }
+const cls = s => s >= 80 ? 'good' : s < 50 ? 'bad' : '';
+
+// ---------- UI ----------
+let currentId = EX[0].id;
+function renderMenu() {
+  const menu = $('#menu'); menu.replaceChildren();
+  let ch = null;
+  EX.forEach(ex => {
+    if (ex.chapter !== ch) { ch = ex.chapter; menu.append(h('h3', {}, `Capítulo ${ch}`)); }
+    const p = progress[ex.id];
+    menu.append(h('button', { class: ex.id === currentId ? 'on' : '', onclick: () => { currentId = ex.id; show(); } },
+      h('span', {}, `${ex.id}. ${ex.title}`),
+      h('span', { class: 'sc ' + (p ? cls(p.best) : '') }, p ? p.best + '%' : '–')));
+  });
+}
+function renderTotal() {
+  const done = EX.filter(e => progress[e.id]).length;
+  const avg = Math.round(EX.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / EX.length);
+  const parts = [];
+  const chs = [...new Set(EX.map(e => e.chapter))];
+  chs.forEach(c => {
+    const l = EX.filter(e => e.chapter === c);
+    parts.push(`Cap. ${c}: ${Math.round(l.reduce((a, e) => a + (progress[e.id]?.best || 0), 0) / l.length)}%`);
+  });
+  const t = $('#total'); t.textContent = `Puntaje total: ${avg}% · ${done}/${EX.length} intentados`; t.title = parts.join('  |  ');
+}
+function show() {
+  const ex = EX.find(e => e.id === currentId); const main = $('#main'); main.replaceChildren();
+  let fails = 0, locked = false;
+  const r = RENDER[ex.type](ex);
+  const res = h('div', { 'aria-live': 'polite' });
+  const prog = progress[ex.id];
+  main.append(h('h2', {}, `Ejercicio ${ex.id} · ${ex.title}`));
+  if (ex.subtitle) main.append(h('p', { class: 'sub' }, ex.subtitle));
+  (ex.images || []).forEach(f => {
+    const img = h('img', { src: 'images/' + encodeURIComponent(f), alt: f, style: 'max-width:100%;display:block;margin:8px 0' });
+    img.addEventListener('error', () => img.replaceWith(h('a', { class: 'imgref', href: IMG_LINKS[f] || '#', target: '_blank', rel: 'noopener' }, '🖼 Ver imagen del ejercicio: ' + f)));
+    main.append(img);
+  });
+  if (ex.instructions) main.append(h('div', { class: 'ins' }, ex.instructions));
+  main.append(r.node);
+  const check = h('button', { class: 'p', onclick: () => {
+    if (locked) return;
+    const { correct, total } = r.check();
+    const score = scoreOf(correct, total, fails);
+    const p = progress[ex.id] || { best: 0, attempts: 0 };
+    p.attempts++; p.last = score; p.best = Math.max(p.best, score); progress[ex.id] = p; save();
+    const all = correct === total;
+    res.replaceChildren(h('div', { class: 'result ' + (all ? 'good' : 'bad') },
+      `Correctas: ${correct}/${total} · Puntaje: ${score}%` + (fails ? ` (−${fails} por intentos fallidos)` : '') +
+      (all ? ' — ¡Correcto! Bien hecho.' : ' — Hay respuestas incorrectas, marcadas con ✘. Inténtalo nuevamente.')));
+    if (all) { locked = true; check.disabled = true; } else fails++;
+    renderMenu(); renderTotal();
+  } }, 'Comprobar respuestas');
+  const retry = h('button', { class: 's', onclick: show }, 'Reiniciar ejercicio');
+  main.append(h('div', { class: 'actions' }, check, retry,
+    prog ? h('span', { class: 'fb' }, `Mejor puntaje: ${prog.best}% · Intentos: ${prog.attempts}`) : ''), res);
+  renderMenu();
+}
+const reset = h('button', { class: 's', onclick: () => { if (confirm('¿Borrar todo el progreso?')) { progress = {}; save(); show(); renderTotal(); } } }, 'Borrar progreso');
+document.querySelector('.top').append(reset);
+renderTotal(); show();
+})();
+</script>
+</body>
+</html>
