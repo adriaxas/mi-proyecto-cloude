@@ -2,6 +2,8 @@
 
 Siete guiones, uno por cada estructura narrativa, armados con bibliografía de la carpeta de fuentes en Google Drive.
 
+El plan general del canal (series, grilla semanal, estructuras nuevas, identidad y banco de temas) está en `00-plan-de-canal.md`.
+
 | # | Estructura | Formato | Tema | Archivo |
 |---|---|---|---|---|
 | 1 | Viaje del héroe (caso de estudio) | Largo, 8-10 min | El reclamo de daño psíquico que parecía imposible de peritar | `01-viaje-del-heroe-dano-psiquico.md` |
