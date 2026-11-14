@@ -2,6 +2,8 @@
 
 Siete guiones, uno por cada estructura narrativa, armados con bibliografía de la carpeta de fuentes en Google Drive.
 
+**Empezar por `00-linea-editorial.md`:** define el foco del canal, la posición, el vocabulario y los límites.
+
 El plan general del canal (series, grilla semanal, estructuras nuevas, identidad y banco de temas) está en `00-plan-de-canal.md`.
 
 Cada guion incluye su ficha de rodaje (cámara, puesta, vestuario, audio, recursos a conseguir) y la indicación de plano en cada bloque. `00-presentacion-del-canal.md` es el video de presentación.
@@ -17,6 +19,10 @@ La carpeta `produccion/` tiene, en orden de lectura: identidad visual, guía de 
 | 5 | Mito vs. realidad | Short/medio, 60-90 s | "En la Cámara Gesell le hacen una pericia al chico" | `05-mito-realidad-camara-gesell.md` |
 | 6 | Expectativa vs. realidad | Vlog, 2-3 min | Cómo es de verdad el trabajo de un perito psicólogo | `06-expectativa-realidad-trabajo-pericial.md` |
 | 7 | Tutorial de transformación | Largo, 8-10 min | Cómo evaluar daño psíquico en 5 pasos | `07-tutorial-evaluar-dano-psiquico.md` |
+| 8 | La pregunta | Short, 50-60 s | ¿Puedo llevar un perito propio a la Cámara Gesell? | `08-pregunta-perito-de-parte-gesell.md` |
+| 9 | Lista invertida | Short, 55-60 s | 5 cosas que tienen que pasar en una Cámara Gesell bien hecha | `09-lista-gesell-bien-hecha.md` |
+| 10 | Mito vs. realidad | Short, 70-85 s | "La pericia oficial es definitiva" | `10-mito-pericia-oficial-definitiva.md` |
+| 11 | Lectura comentada | Medio, 4-5 min | Los sesgos del perito, explicados por una fiscalía | `11-lectura-comentada-sesgos-del-perito.md` |
 
 ## Fuentes utilizadas
 

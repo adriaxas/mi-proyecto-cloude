@@ -38,9 +38,9 @@ Los datos entre corchetes los completás vos: no los inventé.
 
 **Rodaje:** Voz en off sobre imágenes de apoyo; volver a cámara en la última frase.
 
-> En este canal explico cómo funciona la psicología forense de verdad: qué puede afirmar una pericia y qué no, cómo se evalúa un daño psíquico, qué pasa en una Cámara Gesell, por qué se cae un informe.
+> En este canal explico cómo se produce y cómo se controla la prueba psicológica en un proceso: qué pasa en una Cámara Gesell, qué puede afirmar una pericia y qué no, cómo se revisa un informe ya hecho.
 >
-> Hay videos cortos para entender un concepto en un minuto, y videos largos con casos, teoría y práctica. Algunos, junto a abogados.
+> No opino sobre si un hecho ocurrió. Reviso si la prueba se hizo bien. Porque una prueba mal hecha perjudica a todos.
 
 ## 4. Por qué creerte — 0:50 a 1:02
 

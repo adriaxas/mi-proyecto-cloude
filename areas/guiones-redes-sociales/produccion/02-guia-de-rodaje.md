@@ -43,12 +43,23 @@ Tres planos fijos. Los guiones los nombran así.
 
 ## 5. Cómo decir el guion
 
-- **No memorizar todo.** Grabar por bloques: leer un bloque, mirar al lente, decirlo. Los cortes entre bloques se tapan alternando planos A y B.
-- Para textos largos, una aplicación de teleprompter en el celular, con el texto pegado al lente.
-- Si te equivocás, callar dos segundos y repetir la frase completa desde el principio. No cortar la grabación.
-- Dos tomas de cada gancho (los primeros 5 segundos): es lo que más se mira y lo que más conviene elegir.
-- Hablar un poco más rápido y con más énfasis de lo que te parece natural: en cámara se aplana.
+**Leer con teleprompter, sin corrección de ojos.** La función de CapCut que recoloca la mirada funciona con desvíos chicos, pero cuando falla deja una mirada fija y artificial, que es justo lo que querés evitar. Y a tu distancia de cámara no hace falta:
+
+- A 1,5-2 m, si el texto está pegado al lente, el desvío de la mirada casi no se nota.
+- Con tu teleprompter chico: el celular o la tableta con el texto va en la bandeja y la cámara filma a través del vidrio.
+- Si no lográs hacerlo andar: un segundo celular o una tableta con el texto, sostenido justo debajo del lente, da un resultado muy parecido.
+- Aplicación: cualquiera de teleprompter que tenga velocidad regulable y, si usás el vidrio, modo espejo. Probar dos o tres gratuitas y quedarse con la que permita pegar el texto y controlar la velocidad sin tocar la pantalla (hay varias que avanzan solas siguiendo la voz).
+- Letra grande: a 2 m tiene que leerse sin entrecerrar los ojos. Pocas palabras por línea, para que los ojos no barran de lado a lado.
+
+**Para que no suene leído:**
+- Grabar por bloques, no de corrido.
+- Leer cada bloque una vez en voz alta antes de grabarlo.
+- Los ganchos y las frases de cierre, de memoria y mirando al lente: son cortos.
+- Si te equivocás, callar dos segundos y repetir la frase completa. No cortar la grabación.
+- Hablar con un poco más de énfasis del que te parece natural: en cámara se aplana.
 - Manos visibles en plano A; quietas cuando no acompañan.
+
+**Micrófono conectado al celular:** si el celular que filma está a 2 m y el micrófono va enchufado a él, el micrófono también queda a 2 m, y a esa distancia se pierde la ventaja. Dos salidas: un cable alargador que deje el micrófono a un palmo de tu boca, o grabar el audio con un segundo celular (micrófono enchufado ahí, cerca tuyo) y sincronizar con una palmada.
 
 ## 6. Sesión tipo (2 horas)
 
