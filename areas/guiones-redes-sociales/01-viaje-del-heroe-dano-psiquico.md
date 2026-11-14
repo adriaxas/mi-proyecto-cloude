@@ -7,9 +7,24 @@
 **Título sugerido:** "Reclamaba daño psíquico por un choque. La pericia encontró otra cosa"
 **Miniatura:** expediente abierto + texto "¿DAÑO PSÍQUICO?"
 
+## Ficha de rodaje
+
+| | |
+|---|---|
+| **Tipo y color** | Casos · grafito `#3A3F47` con ocre `#B7791F` |
+| **Cámara** | Horizontal, 4K, plano A (medio). El plano B sale por recorte |
+| **Puesta** | Pared, lámpara encendida a un costado. Sobre una mesa baja o en la mano, una carpeta lisa |
+| **Vestuario** | Traje oscuro completo; corbata lisa opcional |
+| **Audio** | Voz + pista instrumental muy baja (la misma de todos los videos de casos) |
+| **Duración de rodaje** | 60 min |
+| **A conseguir antes** | 6 a 8 imágenes de apoyo: esquina o calle con tránsito, colectivo pasando (sin patente legible), carpeta, historia clínica tapada, manos escribiendo, fachada de tribunales. Pista musical |
+| **Miniatura** | "¿DAÑO PSÍQUICO?" + franja ocre |
+
 ---
 
 ## 1. Estado ordinario (gancho) — 0:00 a 0:40
+
+**Rodaje:** Plano B. Lento, serio, casi sin gestos. Dos tomas. Antes de hablar, 5 s mirando la carpeta (sirve de apertura). Entra la música al terminar la primera frase.
 
 > Un hombre choca con el auto. Dos años después, su demanda reclama un daño psíquico grave e irreversible. La aseguradora dice que es todo inventado. Y la verdad no era ninguna de las dos cosas.
 >
@@ -18,6 +33,8 @@
 [TEXTO] "Caso didáctico. Basado en Castelao (2011), Cuadernos de Medicina Forense Argentina."
 
 ## 2. El llamado a la aventura — 0:40 a 2:00
+
+**Rodaje:** Plano A. Tono de relato. Cubrir con imágenes de apoyo de calle y colectivo mientras se cuenta el hecho; volver a cámara para las cifras.
 
 > Llamémoslo Martín. Cuarenta y dos años, empleado. Un colectivo lo embiste en una esquina. Lesiones físicas leves. La demanda llega con el paquete completo: daño físico, daño moral y daño psíquico.
 >
@@ -30,6 +47,8 @@
 > Al perito le llega el oficio con una pregunta que parece simple: ¿Martín tiene daño psíquico?
 
 ## 3. El abismo / la prueba — 2:00 a 4:30
+
+**Rodaje:** Plano A; pasar a B al nombrar cada "callejón". Subir el ritmo y contar con los dedos. Bajar la música.
 
 > Primera entrevista. Martín duerme mal, evita manejar, está irritable, dejó de jugar al fútbol con los amigos. Sufre. Eso es evidente.
 >
@@ -46,6 +65,8 @@
 > A esta altura hay dos tentaciones. Una, decir que sí a todo: hay síntomas, hubo accidente, listo. La otra, decir que no a todo: tenía antecedentes, listo. Las dos son mala pericia.
 
 ## 4. La revelación (la herramienta) — 4:30 a 7:00
+
+**Rodaje:** Plano B para enunciar la definición, con pausa antes de "Son cinco preguntas". Luego A, una toma por pregunta. Sin música en este bloque.
 
 > Lo que ordena el caso es una definición. La de Risso, que es la que usa el Cuerpo Médico Forense: daño psíquico es un síndrome psiquiátrico coherente, novedoso en la biografía, relacionado causal o concausalmente con el hecho, que genera incapacidad y es irreversible o está jurídicamente consolidado.
 >
@@ -68,6 +89,8 @@
 [TEXTO] "Baremo ≠ tarifa (Castelao, 2011, p. 83)"
 
 ## 5. El retorno — 7:00 a 8:30
+
+**Rodaje:** Plano B al dar el resultado; A para los tres consejos, mirando al lente. Vuelve la música y cierra con la placa final.
 
 > ¿Cómo terminó? El dictamen dijo que sí hay daño psíquico, de grado moderado, con nexo concausal: el accidente agravó un cuadro previo, y parte de lo que Martín tiene hoy responde a hechos que nada tienen que ver con el choque.
 >

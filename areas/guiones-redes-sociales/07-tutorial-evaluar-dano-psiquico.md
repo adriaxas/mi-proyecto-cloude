@@ -5,19 +5,38 @@
 
 **Título sugerido:** "Cómo evaluar daño psíquico paso a paso (protocolo pericial)"
 
+## Ficha de rodaje
+
+| | |
+|---|---|
+| **Tipo y color** | Práctica · verde petróleo `#1F5C56` |
+| **Cámara** | Horizontal, 4K, plano A. Dejar libre el lado opuesto a tu cuerpo: ahí van las listas |
+| **Puesta** | Pared, lámpara o estante a un costado |
+| **Vestuario** | Saco sin corbata, camisa lisa |
+| **Audio** | Solo voz, sin música |
+| **Duración de rodaje** | 60 min |
+| **A conseguir antes** | Nada imprescindible. Opcional: tapas de las dos publicaciones citadas |
+| **Miniatura** | "DAÑO PSÍQUICO EN 5 PASOS" + franja verde |
+
 ---
 
 ## La promesa (hook) — 0:00 a 0:25
 
+**Rodaje:** Plano B. Directo. Dos tomas.
+
 > Al final de este video vas a tener un protocolo de cinco pasos para evaluar daño psíquico, y vas a saber en cuál de los cinco se caen la mayoría de las pericias.
 
 ## El mapa — 0:25 a 0:50
+
+**Rodaje:** Plano A. Enumerar con los dedos. En edición, los cinco pasos quedan como barra de progreso arriba.
 
 > Vamos a ver: uno, el hecho. Dos, el cuadro. Tres, el nexo. Cuatro, el tiempo. Cinco, la incapacidad. El protocolo es de José Manuel Muñoz, psicólogo forense en Madrid, y lo voy a ir ajustando a cómo se trabaja en Argentina.
 
 [TEXTO] "1 Hecho · 2 Cuadro · 3 Nexo · 4 Tiempo · 5 Incapacidad"
 
 ## Antes de empezar — 0:50 a 1:40
+
+**Rodaje:** Plano A. Rápido.
 
 > Dos cosas previas.
 >
@@ -26,6 +45,8 @@
 > **Cuándo.** El momento que se recomienda es alrededor de los tres o cuatro meses del hecho. Y si vos atendiste a esa persona en la crisis, la pericia la tiene que hacer otro.
 
 ## Paso 1 — El hecho — 1:40 a 2:50
+
+**Rodaje:** Plano A; B para la regla principal del paso. Una toma por paso; respirar y volver a la postura inicial entre uno y otro.
 
 > Antes de mirar a la persona, mirá lo que pasó. ¿Qué capacidad de traumatizar tiene ese hecho?
 >
@@ -36,6 +57,8 @@
 [TEXTO] "Resiliencia: 35-55 % · Patología crónica: 10-30 % (Bonanno, 2005, en Muñoz, 2013)"
 
 ## Paso 2 — El cuadro — 2:50 a 4:30
+
+**Rodaje:** Plano A; B para la regla principal del paso. Una toma por paso; respirar y volver a la postura inicial entre uno y otro.
 
 > Ahora sí: ¿hay un desajuste psíquico, y cuál es? Diagnóstico con criterios internacionales.
 >
@@ -51,6 +74,8 @@
 
 ## Paso 3 — El nexo — 4:30 a 6:00
 
+**Rodaje:** Plano A; B para la regla principal del paso. Una toma por paso; respirar y volver a la postura inicial entre uno y otro.
+
 > ¿Lo que tiene se relaciona con el hecho? Mirá la coherencia entre los síntomas, cómo evolucionaron y lo que pasó.
 >
 > Y acá entran las concausas. Preexistentes: lo que ya traía. Simultáneas. Y posteriores: lo que le pasó después y no tiene que ver con el juicio.
@@ -61,6 +86,8 @@
 
 ## Paso 4 — El tiempo — 6:00 a 7:00
 
+**Rodaje:** Plano A; B para la regla principal del paso. Una toma por paso; respirar y volver a la postura inicial entre uno y otro.
+
 > ¿Es una lesión o una secuela? La lesión es la alteración; la secuela es cuando eso se estabilizó y quedó.
 >
 > Tres criterios: que hayan pasado alrededor de dos años, que los síntomas estén estables, y que la terapia ya no produzca cambios. Sobre el tratamiento, preguntate: ¿hubo?, ¿fue el adecuado?, ¿la persona lo sostuvo?
@@ -69,11 +96,15 @@
 
 ## Paso 5 — La incapacidad — 7:00 a 8:00
 
+**Rodaje:** Plano A; B para la regla principal del paso. Una toma por paso; respirar y volver a la postura inicial entre uno y otro.
+
 > ¿Cuánto le limita la vida? Área por área: trabajo, familia, vida social, tiempo libre.
 >
 > El protocolo original usa un baremo español que acá no sirve. En Argentina no hay un baremo específico para el fuero civil, así que se usa alguno por analogía: el de Castex y Silva, el del decreto 478/98, el de la ley de riesgos del trabajo, el de Altube y Rinaldi. Decí cuál usaste y por qué.
 
 ## El obstáculo (retención de final) — 8:00 a 9:00
+
+**Rodaje:** Plano B. Cambio de tono marcado en "Pero cuidado".
 
 > Pero cuidado. Si hacés el paso tres sin este detalle, todo lo anterior se cae.
 >
@@ -86,6 +117,8 @@
 [TEXTO] "Personalidad de base ≠ concausa automática"
 
 ## Cierre rápido — 9:00 a 9:15
+
+**Rodaje:** Plano A. Una línea y corte.
 
 > Hecho, cuadro, nexo, tiempo, incapacidad. Las referencias están en la descripción. Gracias por ver.
 

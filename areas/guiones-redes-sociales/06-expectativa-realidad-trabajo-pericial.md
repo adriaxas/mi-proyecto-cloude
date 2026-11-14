@@ -3,9 +3,24 @@
 **Formato:** vlog profesional, 2-3 min · **Estructura:** gancho visual – contraste – proceso – satisfacción
 **Fuentes:** Saborío (2005); Echeburúa et al. (2011); Misiones (s.f.); MPF Chubut (2024); Gilardi y Unzaga (2007).
 
+## Ficha de rodaje
+
+| | |
+|---|---|
+| **Tipo y color** | Personal · terracota `#A65A3A` |
+| **Cámara** | Horizontal, 4K. Poca cámara fija y muchas imágenes de apoyo, filmadas con el celular en mano |
+| **Puesta** | Dos: (1) "expectativa": habitación a oscuras con una sola lámpara; (2) "realidad": tu escritorio real, ordenado, con luz normal |
+| **Vestuario** | Traje para la expectativa; camisa arremangada para la realidad |
+| **Audio** | Voz en off grabada aparte con el micrófono, sentado y cerca. Música de tensión 8 s al inicio (corte seco) y pista discreta al final |
+| **Duración de rodaje** | 90 min, o repartido en dos días |
+| **A conseguir antes** | Pista de tensión y pista discreta. Imágenes propias: pila de carpetas lisas, subrayar un texto, dos sillas vacías, manuales cerrados, manos escribiendo en teclado, pasillo o fachada de tribunales |
+| **Miniatura** | "NO ES COMO EN LAS SERIES" + franja terracota |
+
 ---
 
 ## Gancho visual — 0 a 8 s
+
+**Rodaje:** Plano B con una sola lámpara. Mirada fija fuera de cuadro, 5 s, sin hablar. La frase va en off.
 
 [B-ROLL] Estética de serie policial: luz baja, pizarra con fotos e hilos rojos, música de tensión. El perito mira fijo a alguien fuera de cuadro.
 
@@ -14,6 +29,8 @@
 > (voz en off) Lo miro treinta segundos y ya sé si miente.
 
 ## Contraste rápido — 8 a 20 s
+
+**Rodaje:** Corte seco de imagen y de música. Plano A en el escritorio, luz normal. La frase se dice a cámara.
 
 [CORTE seco, sin música. Luz de oficina. Pila de expedientes, mate, pantalla con el portal de notificaciones]
 
@@ -24,6 +41,8 @@
 > Nadie detecta mentiras mirando. Lo que hay es esto: leer, contrastar y escribir.
 
 ## El proceso — 20 s a 2:10
+
+**Rodaje:** Voz en off sobre imágenes de apoyo: filmar cada acción 10 s, quieta o con paneo lento. Volver a cámara (plano A) en los pasos tres y seis.
 
 [B-ROLL de cada paso; texto con el número]
 
@@ -50,6 +69,8 @@
 [B-ROLL] Pasillo de tribunales, puerta de sala de audiencias.
 
 ## La satisfacción — 2:10 a 2:40
+
+**Rodaje:** Plano B, a cámara, tranquilo. Entra la pista discreta.
 
 [A cámara, tono tranquilo]
 

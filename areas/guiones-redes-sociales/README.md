@@ -4,7 +4,9 @@ Siete guiones, uno por cada estructura narrativa, armados con bibliografía de l
 
 El plan general del canal (series, grilla semanal, estructuras nuevas, identidad y banco de temas) está en `00-plan-de-canal.md`.
 
-La carpeta `produccion/` tiene la identidad visual (colores, fondo, vestuario), la guía de rodaje, el flujo de edición con CapCut y el plan de rodaje bloque por bloque de los siete guiones.
+Cada guion incluye su ficha de rodaje (cámara, puesta, vestuario, audio, recursos a conseguir) y la indicación de plano en cada bloque. `00-presentacion-del-canal.md` es el video de presentación.
+
+La carpeta `produccion/` tiene, en orden de lectura: identidad visual, guía de rodaje, edición con CapCut, recursos y equipo, y la hoja de ruta por etapas.
 
 | # | Estructura | Formato | Tema | Archivo |
 |---|---|---|---|---|

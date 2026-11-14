@@ -5,15 +5,32 @@
 
 **Título sugerido:** "Ningún psicólogo puede saber si estás mintiendo (y la justicia le pregunta igual)"
 
+## Ficha de rodaje
+
+| | |
+|---|---|
+| **Tipo y color** | Teoría · azul marino `#1F3A5F` |
+| **Cámara** | Horizontal, 4K, plano A |
+| **Puesta** | Pared, estante bajo con tres o cuatro libros a un costado |
+| **Vestuario** | Saco oscuro, camisa celeste o gris claro, sin corbata |
+| **Audio** | Solo voz, sin música |
+| **Duración de rodaje** | 50 min |
+| **A conseguir antes** | Opcional: 3 imágenes de apoyo (libros abiertos, manos tomando notas, sala de espera vacía). Tapas de las dos publicaciones citadas para mostrarlas 2 s |
+| **Miniatura** | "NADIE DETECTA MENTIRAS" + franja azul |
+
 ---
 
 ## Tesis (gancho audaz) — 0:00 a 0:30
+
+**Rodaje:** Plano B. Afirmación seca; pausa de un segundo después de "Ninguna". Dos tomas.
 
 > No existe ninguna técnica psicológica que permita saber si una persona miente. Ninguna. Ni el polígrafo, ni el lenguaje corporal, ni un test.
 >
 > Y sin embargo, todos los días un juzgado le pregunta a un psicólogo si un relato es creíble. Vamos a ver qué puede contestar de verdad, y qué no.
 
 ## Contexto rápido — 0:30 a 1:30
+
+**Rodaje:** Plano A. Explicativo, ritmo parejo.
 
 > Hay delitos, sobre todo el abuso sexual infantil, donde casi no hay prueba: no hay testigos, muchas veces no hay evidencia física, y las versiones se contradicen. Lo que queda es el relato.
 >
@@ -22,6 +39,8 @@
 [TEXTO] "SVA = entrevista + CBCA + lista de validez"
 
 ## Antítesis (el error común) — 1:30 a 3:30
+
+**Rodaje:** Plano A; pasar a B al nombrar cada creencia. Una toma por creencia.
 
 > La mayoría de la gente, y buena parte de los medios, cree tres cosas.
 >
@@ -34,6 +53,8 @@
 [TEXTO] "Intuición: ~50 % de error (Manzanero y Muñoz, 2011, p. 4)"
 
 ## Síntesis (la verdad) — 3:30 a 7:00
+
+**Rodaje:** Plano A; B para la cita textual, dicha mirando al lente. Es el bloque más lento: una toma por punto.
 
 > Vamos a lo que dice la evidencia.
 >
@@ -60,6 +81,8 @@
 > Lo que no puede hacer es decir "esto pasó" o "esto no pasó". Eso es del juez.
 
 ## Conclusión abierta — 7:00 a 7:40
+
+**Rodaje:** Plano B. Pregunta genuina; quedarse dos segundos en silencio al final.
 
 > Y acá queda la pregunta incómoda. Si la herramienta tiene este margen de error, pero en muchos casos es casi lo único que hay, ¿qué hacemos? ¿La dejamos de usar y nos quedamos sin nada? ¿O la usamos sabiendo que no alcanza por sí sola?
 >

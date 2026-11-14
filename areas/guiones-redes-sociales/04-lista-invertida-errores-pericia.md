@@ -3,15 +3,32 @@
 **Formato:** Short/Reel, 50-60 s · **Estructura:** listicle con clímax y loop
 **Fuentes:** Echeburúa et al. (2011); Saborío (2005); Misiones (s.f.); Gilardi y Unzaga (2007); Muñoz (2013).
 
+## Ficha de rodaje
+
+| | |
+|---|---|
+| **Tipo y color** | Mitos y errores · bordó `#7A2E2E` |
+| **Cámara** | Vertical, 4K, plano C |
+| **Puesta** | Pared sola |
+| **Vestuario** | Saco o suéter oscuro, camisa lisa |
+| **Audio** | Solo voz |
+| **Duración de rodaje** | 20 min |
+| **A conseguir antes** | Nada |
+| **Miniatura / portada** | "5 ERRORES" + franja bordó |
+
 ---
 
 ## Gancho de expectativa — 0 a 4 s
+
+**Rodaje:** Plano C. Rápido. Fijar postura y gesto: hay que repetirlos idénticos en el cierre. Tres tomas.
 
 > Cinco errores que hunden una pericia psicológica. El último lo cometés sin darte cuenta.
 
 [TEXTO] "5 ERRORES · el 5 no lo ves venir"
 
 ## Desarrollo ascendente — 4 a 40 s
+
+**Rodaje:** Plano C. Una toma por ítem; entre uno y otro, mover apenas el cuerpo (un cuarto de paso) para que el corte se vea intencional.
 
 [CORTE rápido por ítem, número grande en pantalla]
 
@@ -25,6 +42,8 @@
 
 ## El error fatal — 40 a 55 s
 
+**Rodaje:** Plano C, un paso más cerca. Pausa antes de empezar, y más lento que el resto.
+
 [Pausa, plano más cerrado]
 
 > **Cinco. Trabajar con una sola hipótesis.** Leés el expediente, te formás una idea, y desde ahí todo lo que ves la confirma. Lo que no encaja, lo dejás afuera del informe. Eso se llama sesgo confirmatorio, y omitir lo que contradice tu hipótesis es mala praxis.
@@ -32,6 +51,8 @@
 [TEXTO] "SESGO CONFIRMATORIO"
 
 ## Loop — 55 a 58 s
+
+**Rodaje:** Plano C, misma postura y gesto del gancho. Dejar la frase en suspenso y cortar ahí.
 
 > Y es justamente por eso que conviene repasar los...
 

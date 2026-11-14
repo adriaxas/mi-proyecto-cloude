@@ -3,9 +3,24 @@
 **Formato:** Short largo o video medio, 60-90 s · **Estructura:** mito – origen – quiebre – realidad – takeaway
 **Fuentes:** Poder Judicial de Misiones (s.f.); MPF Chubut (2024).
 
+## Ficha de rodaje
+
+| | |
+|---|---|
+| **Tipo y color** | Mitos y errores · bordó `#7A2E2E` |
+| **Cámara** | Vertical, 4K, plano C |
+| **Puesta** | Pared sola |
+| **Vestuario** | Saco oscuro, camisa lisa |
+| **Audio** | Solo voz |
+| **Duración de rodaje** | 25 min |
+| **A conseguir antes** | Un esquema simple de dos salas (dos rectángulos, vidrio en el medio, dos figuras de un lado y varias del otro). Se hace en Canva en 10 minutos. Ninguna imagen de salas reales ni de niños |
+| **Miniatura / portada** | "MITO: CÁMARA GESELL" + franja bordó |
+
 ---
 
 ## El mito (hook) — 0 a 6 s
+
+**Rodaje:** Plano C. Tono cómplice, de "seguro te pasó". Dos tomas.
 
 > Seguramente escuchaste que en la Cámara Gesell un psicólogo evalúa al chico y después dice si lo que cuenta es verdad.
 
@@ -13,13 +28,19 @@
 
 ## El origen — 6 a 18 s
 
+**Rodaje:** Plano C. Liviano, casi con una sonrisa.
+
 > Tiene lógica que lo creas. En las series, el vidrio espejado es la sala de interrogatorios. Y en las noticias se dice "le hicieron la Cámara Gesell" como si fuera un estudio, igual que una radiografía.
 
 ## El quiebre — 18 a 24 s
 
+**Rodaje:** Plano C, un paso más cerca. Cambio seco de tono.
+
 > En la práctica profesional eso es falso por dos motivos.
 
 ## La realidad — 24 a 70 s
+
+**Rodaje:** Plano C. Claro y pausado. Una toma por motivo. Mostrar el esquema de dos salas en el segundo.
 
 > **Primero: la Cámara Gesell no es una pericia. Es una declaración.** El chico o la chica es testigo. El objetivo es obtener su relato de lo que habría pasado: cuándo, dónde, cómo, quién. No es un examen pericial y tampoco es una sesión de terapia.
 >
@@ -36,6 +57,8 @@
 [TEXTO] "Facilitadora, no interrogadora"
 
 ## Takeaway — 70 a 85 s
+
+**Rodaje:** Plano C. Cálido; la última frase, mirando al lente y sin apuro.
 
 > ¿Por qué te sirve saberlo? Porque si sos familiar, vas a entender por qué se hace una sola vez y por qué nadie debería hacerle preguntas antes. Y si sos abogado, porque tus preguntas van por la profesional, y los puntos de pericia son otro trámite.
 >
