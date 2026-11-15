@@ -6,9 +6,55 @@ Define a quién le habla el canal, desde qué lugar, con qué palabras y con qu�
 
 **Tema central:** la calidad de la prueba psicológica en procesos por delitos contra la integridad sexual y violencia: declaración de niños, niñas y adolescentes en Cámara Gesell, psicología del testimonio, pericias a denunciantes e imputados, y revisión técnica de pericias oficiales.
 
-**A quién le habla:** personas imputadas y sus familias, y los abogados que las defienden. En segundo lugar, colegas y estudiantes.
-
 **Qué servicio hay detrás:** perito de parte y consultor técnico: presenciar la declaración en Cámara Gesell, participar en la pericia, y analizar técnicamente un informe ya hecho.
+
+### A quién le habla
+
+Tres públicos, en este orden de prioridad:
+
+| Orden | Público | Qué busca | Qué teme | Qué le sirve del canal |
+|---|---|---|---|---|
+| 1 | **Personas que atraviesan un proceso y sus familias.** Sobre todo quienes están siendo investigados; también quienes denuncian o son querellantes | Entender qué va a pasar y saber si pueden tener a alguien que controle | Que el perito ya tenga una opinión formada, que no lo escuchen, que un error decida el caso | Videos cortos que explican cada instancia y qué hace un perito de parte en ella |
+| 2 | **Abogados** (defensores y querellantes) | Un perito de parte, o saber para qué sirve uno; cómo se propone, qué puntos de pericia pedir, qué preguntar en una Cámara Gesell, cómo se revisa o se impugna un informe | Perder un plazo, pedir mal la prueba, no saber leer un informe técnico | Videos prácticos y largos; colaboraciones |
+| 3 | **Peritos y psicólogos** | Método y criterio | Que les impugnen el informe | Lecturas comentadas, tutoriales, anatomía de un informe |
+
+### La regla del doble espectador
+
+Cada video tiene que poder verlo una persona investigada y una persona querellante, y que **las dos** entiendan para qué sirve un perito de parte. No se nombra a ninguna de las dos en particular.
+
+Cómo se logra:
+
+- **Se habla de "las partes", "quien atraviesa un proceso", "tu caso".** Nunca "si te denunciaron" ni "si denunciaste".
+- **El valor se explica en términos que sirven a ambos:** que la prueba se haga bien, que no haya errores de procedimiento, que el informe diga lo que los datos permiten decir. A una parte le protege de una conclusión apresurada; a la otra, de que la prueba se caiga después por estar mal hecha.
+- **No se usa el miedo como gancho.** Se lo nombra y se lo responde con información: "es habitual llegar a una pericia con miedo a no ser escuchado; esto es lo que debería pasar, y esto es lo que se puede controlar".
+- **Prueba antes de publicar:** leer el guion imaginando a cada uno de los dos espectadores. Si alguno de los dos se sentiría atacado o descartado, se reescribe.
+
+El canal no esconde a quién le resulta más útil: quien más busca un perito de parte es quien siente que la prueba puede jugarle en contra. Pero eso lo resuelve el tema elegido, no el tono.
+
+### Miedos y mitos que el canal responde
+
+| Miedo o creencia | Respuesta del canal | Guion |
+|---|---|---|
+| "El perito oficial ya tiene decidido el resultado" | Los sesgos existen y están descritos en guías oficiales; hay formas concretas de detectarlos en un informe | 11 |
+| "Lo que diga la pericia oficial es definitivo" | No obliga al juez y se puede revisar | 10 |
+| "No puedo hacer nada en la Cámara Gesell" | Las partes pueden proponer un perito que la presencie | 08 |
+| "No sé si la entrevista se hizo bien" | Cinco controles concretos | 09 |
+| "El psicólogo sabe si alguien miente" | Ninguna técnica lo permite; qué sí se puede evaluar | 03 |
+| "En la Cámara Gesell evalúan al chico" | Es una declaración, no una pericia | 05 |
+| "Si me pongo nervioso en la pericia, me va a jugar en contra" | Pendiente de escribir | — |
+| "Un perito de parte dice lo que le conviene a quien le paga" | Pendiente de escribir: qué puede y qué no puede hacer un perito de parte | — |
+| "Si no hay síntomas, no pasó" / "si hay síntomas, pasó" | Pendiente de escribir: el estado psíquico no prueba ni descarta un hecho | — |
+
+### Temas para abogados (segundo público)
+
+Pendientes de escribir; varios necesitan fichar fuentes nuevas de la biblioteca:
+
+- Para qué sirve un perito de parte y en qué momento conviene sumarlo.
+- Cómo redactar puntos de pericia psicológica (y cuáles son tendenciosos).
+- Qué preguntas acercar en una Cámara Gesell y cuáles no.
+- Cómo se lee una pericia psicológica: dónde mirar primero.
+- Con qué fundamentos técnicos se impugna un informe.
+- Perito de parte y consultor técnico: diferencias.
 
 ## 2. Posición: auditor del método
 
